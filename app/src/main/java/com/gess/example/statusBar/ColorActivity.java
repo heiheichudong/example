@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gess.example;
+package com.gess.example.statusBar;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -22,6 +22,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
+import com.gess.example.R;
 
 
 public class ColorActivity extends Activity { 

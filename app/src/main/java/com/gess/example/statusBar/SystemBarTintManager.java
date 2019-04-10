@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gess.example;
+package com.gess.example.statusBar;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

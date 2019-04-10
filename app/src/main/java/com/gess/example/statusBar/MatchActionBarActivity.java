@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gess.example;
+package com.gess.example.statusBar;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -22,6 +22,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.gess.example.R;
 
 
 public class MatchActionBarActivity extends Activity { 

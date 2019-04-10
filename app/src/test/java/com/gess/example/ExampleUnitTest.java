@@ -1,4 +1,4 @@
-package com.demo.example;
+package com.gess.example;
 
 import org.junit.Test;
 

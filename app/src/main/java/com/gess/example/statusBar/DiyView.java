@@ -1,4 +1,4 @@
-package com.gess.example;
+package com.gess.example.statusBar;
 
 import android.content.Context;
 import android.view.View;

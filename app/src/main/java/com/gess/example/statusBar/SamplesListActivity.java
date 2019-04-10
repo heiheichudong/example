@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gess.example;
+package com.gess.example.statusBar;
 
 import static android.content.Intent.ACTION_MAIN;
 
