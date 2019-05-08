@@ -9,13 +9,14 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.Camera"/>
+
+    <uses-feature android:name="android.hardware.Camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
@@ -26,16 +27,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.gess.example.MainActivity">
+        <activity android:name=".regular.RegularActivity"></activity>
+        <activity android:name=".video.MainVideoActivity" />
+        <activity android:name=".eventdispatch.EventDispatchActivity" />
+        <activity android:name=".statusBar.StatusActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".statusBar.ColorActivity"/>
-        <activity android:name=".statusBar.SamplesListActivity"/>
-        <activity android:name=".statusBar.MatchActionBarActivity"/>
+        <activity android:name=".statusBar.ColorActivity" />
+        <activity android:name=".statusBar.SamplesListActivity" />
+        <activity android:name=".statusBar.MatchActionBarActivity" />
     </application>
 
 </manifest>
