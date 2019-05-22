@@ -27,7 +27,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".regular.RegularActivity"></activity>
+        <activity android:name=".video.DiyTextureActivity"></activity>
+        <activity android:name=".regular.RegularActivity" />
         <activity android:name=".video.MainVideoActivity" />
         <activity android:name=".eventdispatch.EventDispatchActivity" />
         <activity android:name=".statusBar.StatusActivity" />

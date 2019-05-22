@@ -33,9 +33,9 @@ public class MainApp extends Application {
         screenWidth = curMetrics.widthPixels;
         screenHeight = curMetrics.heightPixels;
         screenDensity = curMetrics.density;
-        if (screenHeight == 2070){
-            screenHeight = 2160;
-        }
+//        if (screenHeight == 2070){
+//            screenHeight = 2160;
+//        }
     }
 
     @Override

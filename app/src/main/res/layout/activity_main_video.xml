@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_gravity="bottom"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
@@ -30,6 +30,13 @@
 
     <com.gess.example.widget.TextureVideoView
         android:id="@+id/main_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.gess.example.video.DiyTextureView
+        android:id="@+id/diy_tv"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </FrameLayout>

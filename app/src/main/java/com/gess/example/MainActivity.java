@@ -6,11 +6,15 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.gess.example.regular.RegularActivity;
 import com.gess.example.statusBar.StatusActivity;
 import com.gess.example.video.MainVideoActivity;
 import com.tencent.rtmp.TXLiveBase;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, MainVideoActivity.class));
                 break;
             case R.id.btn_3:
+                int i = 1;
+                ((Button) findViewById(R.id.btn_3)).setText(formatValue(i));
                 pauseMusic();
                 break;
             case R.id.btn_4:
@@ -53,6 +59,35 @@ public class MainActivity extends AppCompatActivity {
         }else {
             audioManager.abandonAudioFocus(null);
         }
+    }
+
+    private static String[] suffix = new String[]{"","k", "m", "b", "t"};
+    private static int MAX_LENGTH = 4;
+
+    private static String format(double number) {
+        String r = new DecimalFormat("##0E0").format(number);
+        r = r.replaceAll("E[0-9]", suffix[Character.getNumericValue(r.charAt(r.length() - 1)) / 3]);
+        while(r.length() > MAX_LENGTH || r.matches("[0-9]+\\.[a-z]")){
+            r = r.substring(0, r.length()-2) + r.substring(r.length() - 1);
+        }
+        return r;
+    }
+
+
+    public static String formatValue(double value) {
+        if (value == 0){
+            return "0";
+        }
+        int power;
+        String suffix = " kmbt";
+        String formattedNumber = "";
+
+        NumberFormat formatter = new DecimalFormat("#,###.#");
+        power = (int)StrictMath.log10(value);
+        value = value/(Math.pow(10,(power/3)*3));
+        formattedNumber=formatter.format(value);
+        formattedNumber = formattedNumber + suffix.charAt(power/3);
+        return formattedNumber.length()>4 ?  formattedNumber.replaceAll("\\.[0-9]+", "") : formattedNumber;
     }
 
 }
