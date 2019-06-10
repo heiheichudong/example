@@ -9,9 +9,8 @@ import android.view.WindowManager;
 
 import com.gess.example.MainApp;
 import com.gess.example.R;
-import com.gess.example.utils.Logger;
-import com.gess.example.utils.TextureUtil;
 import com.gess.example.widget.TextureVideoView;
+import com.gess.note.utils.Logger;
 import com.tencent.ijk.media.player.IMediaPlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +40,7 @@ public class MainVideoActivity extends AppCompatActivity {
         videoView.setOnPreparedListener(new IMediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(IMediaPlayer iMediaPlayer) {
-                TextureUtil.setTextureViewSize(videoView, iMediaPlayer);
+//                TextureUtil.setTextureViewSize(videoView, iMediaPlayer);
 
                 Log.d("MainVideoActivity", "view 宽 = " + videoView.getWidth());
                 Log.d("MainVideoActivity", "view 高 = " + videoView.getHeight());

@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.Surface;
 import android.view.TextureView;
 
-import com.gess.example.utils.Logger;
+import com.gess.note.utils.Logger;
 import com.tencent.ijk.media.player.IMediaPlayer;
 import com.tencent.ijk.media.player.IjkMediaPlayer;
 

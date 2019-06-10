@@ -5,4 +5,8 @@
     <string name="match_actionbar_example">Match Action Bar Example</string>
     <string name="color_example">Color Example</string>
     <string name="set">Set</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment_a">Hello blank fragment A</string>
+    <string name="hello_blank_fragment_b">Hello blank fragment B</string>
 </resources>

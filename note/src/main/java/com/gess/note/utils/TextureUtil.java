@@ -1,14 +1,14 @@
-package com.gess.example.utils;
+package com.gess.note.utils;
 
 import android.graphics.Matrix;
+import android.media.MediaPlayer;
 import android.util.Log;
+import android.view.TextureView;
 
-import com.gess.example.widget.TextureVideoView;
-import com.tencent.ijk.media.player.IMediaPlayer;
 
 public class TextureUtil {
 
-    public static void setTextureViewSize(TextureVideoView textureVideoView, IMediaPlayer mp) {
+    public static void setTextureViewSize(TextureView textureVideoView, MediaPlayer mp) {
         Log.d("MainVideoActivity", textureVideoView.getWidth() + "==" + textureVideoView.getHeight());
         float sx = (float) textureVideoView.getWidth() / (float) mp.getVideoWidth();
         float sy = (float) textureVideoView.getHeight() / (float) mp.getVideoHeight();

@@ -3,6 +3,8 @@ package com.gess.example;
 import android.app.Application;
 import android.util.DisplayMetrics;
 
+import com.gess.note.utils.Utils;
+
 
 public class MainApp extends Application {
 
@@ -42,6 +44,7 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
         this.instance = this;
+        Utils.init(getApplicationContext());
         initScreenSize();
 //        TXLiveBase.getInstance().setLicence(instance, ugcLicenceUrl, ugcKey);
 //        TXLiveBase.setConsoleEnabled(true);

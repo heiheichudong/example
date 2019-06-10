@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".douyin.DouyinActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_dy_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="douyin"
+        android:text="video"/>
+
+    <Button
+        android:id="@+id/btn_dy_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="douyin"
+        android:text="profile"/>
+</LinearLayout>

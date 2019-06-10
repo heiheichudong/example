@@ -27,7 +27,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".video.DiyTextureActivity"></activity>
+        <activity android:name=".fragment.FragmentContainerActivity"></activity>
+        <activity android:name=".video.FrameActivity" />
+        <activity android:name=".douyin.DouyinActivity" />
+        <activity android:name=".diyview.DiyViewTestActivitty" />
+        <activity android:name=".video.DiyTextureActivity" />
         <activity android:name=".regular.RegularActivity" />
         <activity android:name=".video.MainVideoActivity" />
         <activity android:name=".eventdispatch.EventDispatchActivity" />

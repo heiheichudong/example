@@ -37,7 +37,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.MediaController;
 import android.widget.MediaController.MediaPlayerControl;
 
-import com.gess.example.utils.Logger;
+import com.gess.note.utils.Logger;
 import com.tencent.ijk.media.player.IMediaPlayer;
 import com.tencent.ijk.media.player.IjkMediaPlayer;
 

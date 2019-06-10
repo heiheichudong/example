@@ -1,8 +1,9 @@
-package com.gess.example.utils;
+package com.gess.note.utils;
 
 import android.util.Log;
 
-import com.gess.example.BuildConfig;
+import com.gess.note.BuildConfig;
+
 
 public class Logger {
 
