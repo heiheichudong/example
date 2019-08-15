@@ -24,8 +24,6 @@ public class MainVideoActivity extends AppCompatActivity {
         setStatusBar();
 //        setTexture();
 //        setTextureTest();
-
-        startActivity(new Intent(MainVideoActivity.this,DiyTextureActivity.class));
     }
 
     private void setTextureTest() {
@@ -72,6 +70,12 @@ public class MainVideoActivity extends AppCompatActivity {
             case R.id.main_video_btn2:
                 ((DiyTextureView) findViewById(R.id.diy_tv)).pause();
 //                ((TextureVideoView) findViewById(R.id.main_video)).pause();
+                break;
+            case R.id.btn_diytexture:
+                startActivity(new Intent(MainVideoActivity.this,DiyTextureActivity.class));
+                break;
+            case R.id.btn_gpuimage:
+                startActivity(new Intent(MainVideoActivity.this,GPUImageActivity.class));
                 break;
         }
     }

@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
 
         ndk {
             abiFilters "armeabi", "armeabi-v7a"
@@ -38,4 +39,6 @@ dependencies {
     //     导入腾讯云短视频SDK jar
     //    implementation fileTree(dir: 'src/main/jniLibs', includes: ['*.jar'])
     implementation project(':note')
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
 }

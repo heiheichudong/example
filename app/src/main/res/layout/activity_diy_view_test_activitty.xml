@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:clipToPadding="false"
     android:orientation="vertical"
     tools:context=".diyview.DiyViewTestActivitty">
 
@@ -15,7 +18,65 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@color/white" />
+
     <com.gess.example.diyview.VideoRecordView
+        android:id="@+id/vrv_diy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <com.gess.example.diyview.RecordVideoView
+        android:id="@+id/rvv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_hsv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!--<com.gess.example.widget.imageview.CircleImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop"
+        app:riv_borderWidth="2dp"
+        app:riv_borderColor="#FFC107"/>
+
+    <com.gess.example.widget.imageview.RoundImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:riv_borderWidth="2dp"
+        app:riv_borderColor="#8c9eff"
+        app:riv_rightTopRadius="30dp"
+        app:riv_leftBottomRadius="30dp"
+
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop"/>-->
+
+    <!--app:riv_leftTopRadius="30dp"
+        app:riv_rightBottomRadius="30dp"-->
+
+    <org.raphets.roundimageview.RoundImageView
+        android:layout_width="67.5dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        app:corner_radius="10dp"
+        app:type="round" />
+    <!--        app:border_color="@android:color/holo_blue_dark"
+            app:border_width="5dp"-->
 </LinearLayout>
