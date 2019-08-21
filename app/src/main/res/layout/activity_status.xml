@@ -24,4 +24,27 @@
         android:layout_height="wrap_content"
         android:onClick="button" />
 
+
+    <RadioButton
+        android:id="@+id/rb_test"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:button="@null"
+        android:drawableTop="@drawable/draw_select"
+        android:text="csss"
+        android:textColor="@color/black"
+        android:textSize="8sp" />
+
+    <Button
+        android:id="@+id/btn_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="button"
+        android:text="picture" />
+    <Button
+        android:id="@+id/btn_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="button"
+        android:text="imageview" />
 </LinearLayout>

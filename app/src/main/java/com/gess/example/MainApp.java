@@ -4,6 +4,11 @@ import android.app.Application;
 import android.util.DisplayMetrics;
 
 import com.gess.note.utils.Utils;
+import com.zhy.http.okhttp.OkHttpUtils;
+
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 
 
 public class MainApp extends Application {
@@ -49,5 +54,13 @@ public class MainApp extends Application {
 //        TXLiveBase.getInstance().setLicence(instance, ugcLicenceUrl, ugcKey);
 //        TXLiveBase.setConsoleEnabled(true);
 //        TXLiveBase.setLogLevel(TXLiveConstants.LOG_LEVEL_DEBUG);
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+//                .addInterceptor(new LoggerInterceptor("TAG"))
+                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
+                .readTimeout(10000L, TimeUnit.MILLISECONDS)
+                //其他配置
+                .build();
+        OkHttpUtils.initClient(okHttpClient);
     }
 }

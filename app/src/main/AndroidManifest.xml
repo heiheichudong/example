@@ -27,7 +27,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragment.FragmentContainerActivity"></activity>
+        <activity android:name=".gesture.GestureActivity"></activity>
+        <activity android:name=".file.FileActivity" />
+        <activity android:name=".net.NetActivity" />
+        <activity android:name=".pic.ImageViewActivity" />
+        <activity android:name=".pic.PictureActivity" />
+        <activity android:name=".video.GPUImageActivity" />
+        <activity android:name=".animator.AnimatorActivity" />
+        <activity android:name=".fragment.FragmentContainerActivity" />
         <activity android:name=".video.FrameActivity" />
         <activity android:name=".douyin.DouyinActivity" />
         <activity android:name=".diyview.DiyViewTestActivitty" />

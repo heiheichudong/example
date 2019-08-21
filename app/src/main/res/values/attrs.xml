@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AbsRoundImageView">
+        <attr name="riv_borderWidth" format="dimension|reference" />
+        <attr name="riv_borderColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="riv_leftTopRadius" format="dimension|reference" />
+        <attr name="riv_rightTopRadius" format="dimension|reference" />
+        <attr name="riv_rightBottomRadius" format="dimension|reference" />
+        <attr name="riv_leftBottomRadius" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="Round_Image_View">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="leftTop_corner_radius" format="dimension" />
+        <attr name="rightTop_corner_radius" format="dimension" />
+        <attr name="leftBottom_corner_radius" format="dimension" />
+        <attr name="rightBottom_corner_radius" format="dimension" />
+        <attr name="type" format="enum">
+            <enum name="oval" value="2" />
+            <enum name="round" value="1" />
+            <enum name="circle" value="0" />
+        </attr>
+    </declare-styleable>
+</resources>

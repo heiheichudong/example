@@ -25,10 +25,20 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.google.android.material:material:1.0.0-rc01'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    api 'org.raphets:roundimageview:1.2.0'
+    api 'jp.co.cyberagent.android:gpuimage:2.0.3'
+    api 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    api("com.squareup.okhttp3:okhttp:4.0.1")
+    api 'com.zhy:okhttputils:2.6.2'
+    api 'com.squareup.retrofit2:retrofit:2.6.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    api 'com.squareup.retrofit2:converter-gson:2.6.0'
+    api 'io.reactivex.rxjava2:rxjava:2.2.10'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'com.crystal:crystalrangeseekbar:1.1.3'
 }

@@ -8,11 +8,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.gess.example.animator.AnimatorActivity;
 import com.gess.example.diyview.DiyViewTestActivitty;
 import com.gess.example.douyin.DouyinActivity;
+import com.gess.example.file.FileActivity;
 import com.gess.example.fragment.FragmentContainerActivity;
+import com.gess.example.gesture.GestureActivity;
+import com.gess.example.net.NetActivity;
 import com.gess.example.regular.RegularActivity;
 import com.gess.example.statusBar.StatusActivity;
+import com.gess.example.video.FrameActivity;
 import com.gess.example.video.MainVideoActivity;
 import com.tencent.rtmp.TXLiveBase;
 
@@ -57,6 +62,21 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_7:
                 startActivity(new Intent(this, FragmentContainerActivity.class));
+                break;
+            case R.id.btn_8:
+                startActivity(new Intent(this, AnimatorActivity.class));
+                break;
+            case R.id.btn_9:
+                startActivity(new Intent(this, FrameActivity.class));
+                break;
+            case R.id.btn_10:
+                startActivity(new Intent(this, NetActivity.class));
+                break;
+            case R.id.btn_11:
+                startActivity(new Intent(this, FileActivity.class));
+                break;
+            case R.id.btn_12:
+                startActivity(new Intent(this, GestureActivity.class));
                 break;
         }
     }

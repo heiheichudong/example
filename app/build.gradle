@@ -9,13 +9,17 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
 
         ndk {
             abiFilters "armeabi", "armeabi-v7a"
             // 如果您使用的是商业版，只能使用 armeabi 架构，即：
             // abiFilters "armeabi",
         }
+
     }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,6 +27,7 @@ android {
         }
     }
 }
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -38,4 +43,6 @@ dependencies {
     //     导入腾讯云短视频SDK jar
     //    implementation fileTree(dir: 'src/main/jniLibs', includes: ['*.jar'])
     implementation project(':note')
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
 }

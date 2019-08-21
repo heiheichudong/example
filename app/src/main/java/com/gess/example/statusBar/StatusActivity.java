@@ -1,18 +1,30 @@
 package com.gess.example.statusBar;
 
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioButton;
 
 import com.gess.example.R;
+import com.gess.example.pic.ImageViewActivity;
+import com.gess.example.pic.PictureActivity;
+import com.gess.note.utils.SizeUtils;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class StatusActivity extends AppCompatActivity {
+
+    private RadioButton radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
+        radioButton = findViewById(R.id.rb_test);
+        Drawable drawable = getResources().getDrawable(R.drawable.draw_select);
+        drawable.setBounds(0, 0, SizeUtils.dp2px(24), SizeUtils.dp2px(24));
+        radioButton.setCompoundDrawables(null, drawable, null, null);
     }
 
     public void button(View v) {
@@ -26,7 +38,12 @@ public class StatusActivity extends AppCompatActivity {
             case R.id.btn_sb_match:
                 startActivity(new Intent(this, SamplesListActivity.class));
                 break;
-
+            case R.id.btn_pic:
+                startActivity(new Intent(this, PictureActivity.class));
+                break;
+            case R.id.btn_image:
+                startActivity(new Intent(this, ImageViewActivity.class));
+                break;
         }
     }
 }
