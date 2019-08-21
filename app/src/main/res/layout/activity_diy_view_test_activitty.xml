@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/white"
     android:clipToPadding="false"
     android:orientation="vertical"
     tools:context=".diyview.DiyViewTestActivitty">
@@ -69,14 +69,30 @@
     <!--app:riv_leftTopRadius="30dp"
         app:riv_rightBottomRadius="30dp"-->
 
-    <org.raphets.roundimageview.RoundImageView
+    <com.gess.example.widget.RoundImageView
         android:layout_width="67.5dp"
         android:layout_height="120dp"
         android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher"
-        app:corner_radius="10dp"
+        app:cornerRadius="10dp"
         app:type="round" />
     <!--        app:border_color="@android:color/holo_blue_dark"
             app:border_width="5dp"-->
+
+    <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+        android:id="@+id/rangeSeekbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:corner_radius="10"
+        app:min_value="50"
+        app:max_value="100"
+        app:gap="50"
+        app:bar_color="#8990C4"
+        app:bar_highlight_color="#2434AD"
+        app:left_thumb_color="#1A246D"
+        app:right_thumb_color="#1A246D"
+        app:left_thumb_color_pressed="#030B47"
+        app:right_thumb_color_pressed="#030B47"
+        app:data_type="_integer"/>
 </LinearLayout>

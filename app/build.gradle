@@ -16,7 +16,10 @@ android {
             // 如果您使用的是商业版，只能使用 armeabi 架构，即：
             // abiFilters "armeabi",
         }
+
     }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -24,6 +27,7 @@ android {
         }
     }
 }
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
