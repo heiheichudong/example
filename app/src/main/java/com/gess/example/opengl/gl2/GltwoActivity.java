@@ -1,11 +1,9 @@
 package com.gess.example.opengl.gl2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 
-import com.gess.example.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class GltwoActivity extends AppCompatActivity {
 
@@ -16,6 +14,19 @@ public class GltwoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         glSurfaceView = new GLSurfaceView(this);
         glSurfaceView.setRenderer(new GltwoRenderer());
-        setContentView(R.layout.activity_gltwo);
+        setContentView(glSurfaceView);
+//        setContentView(R.layout.activity_gltwo);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        glSurfaceView.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        glSurfaceView.onPause();
     }
 }

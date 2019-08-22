@@ -40,5 +40,6 @@ public class GlOneRenderer implements GLSurfaceView.Renderer {
         gl10.glLoadIdentity();
         //视点变化
         GLU.gluLookAt(gl10,0,0,3,0,0,0,0,1,0);
+
     }
 }
