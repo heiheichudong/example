@@ -15,6 +15,7 @@ import com.gess.example.file.FileActivity;
 import com.gess.example.fragment.FragmentContainerActivity;
 import com.gess.example.gesture.GestureActivity;
 import com.gess.example.net.NetActivity;
+import com.gess.example.opengl.GlActivity;
 import com.gess.example.regular.RegularActivity;
 import com.gess.example.statusBar.StatusActivity;
 import com.gess.example.video.FrameActivity;
@@ -77,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_12:
                 startActivity(new Intent(this, GestureActivity.class));
+                break;
+            case R.id.btn_13:
+                startActivity(new Intent(this, GlActivity.class));
                 break;
         }
     }
