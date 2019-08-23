@@ -34,6 +34,17 @@ public class BufferUtil {
         return mBuffer;
     }
 
+    public static ByteBuffer getBuffer(byte[] arr) {
+        //先初始化buffer,数组的长度*4,因为一个int占4个字节
+        ByteBuffer qbb = ByteBuffer.allocateDirect(arr.length * 4);
+        //数组排列用nativeOrder
+        qbb.order(ByteOrder.nativeOrder());
+
+        qbb.put(arr);
+        qbb.position(0);
+        return qbb;
+    }
+
     private float[] vertices = new float[]{
             0.f, -0.525731f, 0.850651f,
             0.850651f, 0.f, 0.525731f,

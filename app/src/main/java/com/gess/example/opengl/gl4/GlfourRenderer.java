@@ -1,4 +1,4 @@
-package com.gess.example.opengl.gl3;
+package com.gess.example.opengl.gl4;
 
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
@@ -11,7 +11,7 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class GlthreeRenderer implements GLSurfaceView.Renderer {
+public class GlfourRenderer implements GLSurfaceView.Renderer {
 
     private float[] verticesf = new float[]{
             0.f, -0.525731f, 0.850651f,
@@ -72,6 +72,7 @@ public class GlthreeRenderer implements GLSurfaceView.Renderer {
 
     ByteBuffer indexes = BufferUtil.getBuffer(bytes);
 
+
     float rot = 1.0f;
 
     @Override
@@ -82,7 +83,10 @@ public class GlthreeRenderer implements GLSurfaceView.Renderer {
         gl.glClearColor(0, 0, 0, 1);
         //启用深度缓存
         gl.glEnable(GL10.GL_DEPTH_TEST);
+
+        setupLight(gl);
     }
+
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
@@ -113,7 +117,7 @@ public class GlthreeRenderer implements GLSurfaceView.Renderer {
         //设置模型位置 （平移）
 //        gl.glTranslatef(0, 0, 0);
         //设置旋转(y轴)
-//        gl.glRotatef(rot, 1, 1, 0);
+        gl.glRotatef(rot, 1, 1, 0);
         //允许设置顶点
         // （状态开关） 这里指开启
         // GL10.GL_VERTEX_ARRAY ->顶点
@@ -127,14 +131,9 @@ public class GlthreeRenderer implements GLSurfaceView.Renderer {
         //放大
 //        gl.glScalef(2, 2, 2);
         //绘制三角形 20个 60个顶点
-//        gl.glDrawElements(GL10.GL_TRIANGLES, 60, GL10.GL_UNSIGNED_BYTE, indexes);
-//
-        for (int i = 0; i < 10; i++) {
-            gl.glLoadIdentity();
-            gl.glTranslatef(0f, -2.0f, -5f * (float) i);
-            gl.glRotatef(rot, 1, 1, 0);
-            gl.glDrawElements(GL10.GL_TRIANGLES, 60, GL10.GL_UNSIGNED_BYTE, indexes);
-        }
+        gl.glDrawElements(GL10.GL_TRIANGLES, 60, GL10.GL_UNSIGNED_BYTE, indexes);
+        //阴影模式 GL10.GL_FLAT 不平滑 GL10.GL_SMOOTH 平滑过渡
+        gl.glShadeModel(GL10.GL_FLAT);
 
         //关闭颜色数组设置
         gl.glDisableClientState(GL10.GL_COLOR_ARRAY);
@@ -142,5 +141,13 @@ public class GlthreeRenderer implements GLSurfaceView.Renderer {
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
 
         rot += 0.5f;
+    }
+
+    private void setupLight(GL10 gl) {
+        //打开光源
+        gl.glEnable(GL10.GL_LIGHTING);
+        //
+//        gl.glEnable(GL10.GL_LIGHT1);
+
     }
 }
