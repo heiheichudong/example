@@ -1,15 +1,16 @@
 package com.gess.example.opengl;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.gess.example.R;
 import com.gess.example.opengl.gl1.GlOneActivity;
 import com.gess.example.opengl.gl2.GltwoActivity;
-import com.gess.example.statusBar.StatusActivity;
+import com.gess.example.opengl.gl3.GlthreeActivity;
+import com.gess.example.opengl.gl4.GlfourActivity;
 
 public class GlActivity extends AppCompatActivity {
 
@@ -26,6 +27,14 @@ public class GlActivity extends AppCompatActivity {
                 break;
             case R.id.gl2:
                 startActivity(new Intent(this, GltwoActivity.class));
+                break;
+            case R.id.gl3:
+                startActivity(new Intent(this, GlthreeActivity.class));
+                break;
+            case R.id.gl4:
+                startActivity(new Intent(this, GlfourActivity.class));
+                break;
+            default:
                 break;
         }
     }
