@@ -86,19 +86,19 @@ public class Data {
             1.0f, 1.0f, 1.0f, 1.0f
     };
 
-    public FloatBuffer ambientBuffer = BufferUtil.getBuffer(lightAmbient);
+    public FloatBuffer ambientLightBuffer = BufferUtil.getBuffer(lightAmbient);
 
     float[] lightDiffuse = new float[]{
             0.7f, 0.7f, 0.7f, 1.0f
     };
 
-    public FloatBuffer diffuseBuffer = BufferUtil.getBuffer(lightDiffuse);
+    public FloatBuffer diffuseLightBuffer = BufferUtil.getBuffer(lightDiffuse);
 
     float[] lightSpecular = new float[]{//SPECULAR
             0.7f, 0.7f, 0.7f, 1.0f
     };
 
-    public FloatBuffer specularBuffer = BufferUtil.getBuffer(lightSpecular);
+    public FloatBuffer specularLightBuffer = BufferUtil.getBuffer(lightSpecular);
 
     float[] lightPosition = new float[]{//SPECULAR
             0.0f, 10.0f, 10.0f, 0.0f
@@ -111,4 +111,19 @@ public class Data {
     };
 
     public FloatBuffer directionBuffer = BufferUtil.getBuffer(lightDirection);
+
+    float[] ambientAndDiffuse = new float[]{0.0f, 0.1f, 0.9f, 1.0f};
+
+    public FloatBuffer ambientAndDiffuseBuffer = BufferUtil.getBuffer(ambientAndDiffuse);
+
+
+    float[] ambient = {0.0f, 0.1f, 0.9f, 1.0f};
+    public FloatBuffer ambientBuffer = BufferUtil.getBuffer(ambient);
+    float[] diffuse = new float[]{0.9f, 0.0f, 0.1f, 1.0f};
+    public FloatBuffer diffuseBuffer = BufferUtil.getBuffer(diffuse);
+    float[] specular = new float[]{0.9f, 0.9f, 0.1f, 1.0f};
+    public FloatBuffer specularBuffer = BufferUtil.getBuffer(specular);
+    float[] emission = new float[]{0.0f, 0.4f, 0.1f, 1.0f};//EMISSION
+    public FloatBuffer emissionBuffer = BufferUtil.getBuffer(emission);
+
 }

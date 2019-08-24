@@ -27,11 +27,6 @@ public class GlfourRenderer implements GLSurfaceView.Renderer {
         setupMaterial(gl);
     }
 
-    private void setupMaterial(GL10 gl) {
-        //开启颜色材质
-        gl.glEnable(GL10.GL_COLOR_MATERIAL);
-    }
-
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
@@ -62,7 +57,7 @@ public class GlfourRenderer implements GLSurfaceView.Renderer {
         //设置模型位置 （平移）
 //        gl.glTranslatef(0, 0, 0);
         //设置旋转(y轴)
-        gl.glRotatef(rot, 1, 1, 0);
+        gl.glRotatef(rot, 1, 1, 1);
         //允许设置顶点数组
         // （状态开关） 这里指开启
         // GL10.GL_VERTEX_ARRAY ->顶点
@@ -76,7 +71,7 @@ public class GlfourRenderer implements GLSurfaceView.Renderer {
         //设置颜色数组
         gl.glColorPointer(4, GL10.GL_FLOAT, 0, data.colors);
         //设置法线数组
-        gl.glNormalPointer(GL10.GL_FLOAT, 0, data.colors);
+        gl.glNormalPointer(GL10.GL_FLOAT, 0, data.normalBuffer);
         //放大
 //        gl.glScalef(2, 2, 2);
         //绘制三角形 20个 60个顶点
@@ -100,11 +95,11 @@ public class GlfourRenderer implements GLSurfaceView.Renderer {
         //开启光源
         gl.glEnable(GL10.GL_LIGHT0);
         //设置环境光 参数一：几号光源  参数二：GL10.GL_AMBIENT 环境光 参数三：光颜色
-        gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_AMBIENT, data.ambientBuffer);
+        gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_AMBIENT, data.ambientLightBuffer);
         //设置散射光 参数二：GL10.GL_DIFFUSE
-        gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_DIFFUSE, data.diffuseBuffer);
+        gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_DIFFUSE, data.diffuseLightBuffer);
         //设置高光 参数二：GL10.GL_SPECULAR
-        gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_SPECULAR, data.specularBuffer);
+        gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_SPECULAR, data.specularLightBuffer);
         //光源位置
         gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_POSITION, data.positionBuffer);
         //设置光照方向
@@ -113,4 +108,22 @@ public class GlfourRenderer implements GLSurfaceView.Renderer {
         gl.glLightf(GL10.GL_LIGHT0, GL10.GL_SPOT_CUTOFF, 45.0f);
 
     }
+
+    private void setupMaterial(GL10 gl) {
+        //开启颜色材质
+//        gl.glEnable(GL10.GL_COLOR_MATERIAL);
+        //环境元素和散射元素颜色
+//        gl.glMaterialfv(GL10.GL_FRONT_AND_BACK,GL10.GL_AMBIENT_AND_DIFFUSE,data.ambientAndDiffuseBuffer);
+        //单独设置环境元素
+        gl.glMaterialfv(GL10.GL_FRONT_AND_BACK, GL10.GL_AMBIENT, data.ambientBuffer);
+        //单独设置散射元素
+        gl.glMaterialfv(GL10.GL_FRONT_AND_BACK, GL10.GL_DIFFUSE, data.diffuseBuffer);
+        //设置高光元素
+        gl.glMaterialfv(GL10.GL_FRONT_AND_BACK, GL10.GL_SPECULAR, data.specularBuffer);
+        //设置反光度
+        gl.glMaterialf(GL10.GL_FRONT_AND_BACK, GL10.GL_SPECULAR, 25.0f);
+        //设置自发光
+        gl.glMaterialfv(GL10.GL_FRONT_AND_BACK,GL10.GL_EMISSION,data.emissionBuffer);
+    }
+
 }
