@@ -3,79 +3,20 @@ package com.gess.example.opengl.gl3;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
 
-import com.gess.example.opengl.utils.BufferUtil;
-
-import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
+import com.gess.example.opengl.Data;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 public class GlthreeRenderer implements GLSurfaceView.Renderer {
 
-    private float[] verticesf = new float[]{
-            0.f, -0.525731f, 0.850651f,
-            0.850651f, 0.f, 0.525731f,
-            0.850651f, 0.f, -0.525731f,
-            -0.850651f, 0.f, -0.525731f,
-            -0.850651f, 0.f, 0.525731f,
-            -0.525731f, 0.850651f, 0.f,
-            0.525731f, 0.850651f, 0.f,
-            0.525731f, -0.850651f, 0.f,
-            -0.525731f, -0.850651f, 0.f,
-            0.f, -0.525731f, -0.850651f,
-            0.f, 0.525731f, -0.850651f,
-            0.f, 0.525731f, 0.850651f
-    };
-
-    FloatBuffer vertices = BufferUtil.getBuffer(verticesf);
-
-    private float[] colorsf = new float[]{
-            1.0f, 0.5f, 0.8f, 1.0f,
-            0.8f, 1.0f, 0.5f, 1.0f,
-            0.8f, 1.0f, 0.5f, 1.0f,
-            0.8f, 0.1f, 0.5f, 1.0f,
-            0.8f, 1.0f, 0.5f, 1.0f,
-            0.5f, 0.8f, 1.0f, 1.0f,
-            0.5f, 0.8f, 1.0f, 1.0f,
-            0.5f, 0.8f, 1.0f, 1.0f,
-            0.5f, 0.8f, 1.0f, 1.0f,
-            1.0f, 0.5f, 0.8f, 1.0f,
-            1.0f, 0.5f, 0.8f, 1.0f,
-            1.0f, 0.5f, 0.8f, 1.0f
-    };
-
-    FloatBuffer colors = BufferUtil.getBuffer(colorsf);
-
-    private byte[] bytes = new byte[]{
-            1, 2, 6,
-            1, 7, 2,
-            3, 4, 5,
-            4, 3, 8,
-            6, 5, 11,
-            5, 6, 10,
-            9, 10, 2,
-            10, 9, 3,
-            7, 8, 9,
-            8, 7, 0,
-            11, 0, 1,
-            0, 11, 4,
-            6, 2, 10,
-            1, 6, 11,
-            3, 5, 10,
-            5, 4, 11,
-            2, 7, 9,
-            7, 1, 0,
-            3, 9, 8,
-            4, 8, 0,
-    };
-
-    ByteBuffer indexes = BufferUtil.getBuffer(bytes);
+    Data data;
 
     float rot = 1.0f;
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+        data = new Data();
         // 角度校正提示
         gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_NICEST);
         //清理屏幕颜色
@@ -121,9 +62,9 @@ public class GlthreeRenderer implements GLSurfaceView.Renderer {
         //允许设置颜色数组
         gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
         //设置颜色数组
-        gl.glColorPointer(4, GL10.GL_FLOAT, 0, colors);
+        gl.glColorPointer(4, GL10.GL_FLOAT, 0, data.colors);
         //设置顶点数据 参数一（定义几维）参数二：数据类型这里是float
-        gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertices);
+        gl.glVertexPointer(3, GL10.GL_FLOAT, 0, data.vertices);
         //放大
 //        gl.glScalef(2, 2, 2);
         //绘制三角形 20个 60个顶点
@@ -133,7 +74,7 @@ public class GlthreeRenderer implements GLSurfaceView.Renderer {
             gl.glLoadIdentity();
             gl.glTranslatef(0f, -2.0f, -5f * (float) i);
             gl.glRotatef(rot, 1, 1, 0);
-            gl.glDrawElements(GL10.GL_TRIANGLES, 60, GL10.GL_UNSIGNED_BYTE, indexes);
+            gl.glDrawElements(GL10.GL_TRIANGLES, 60, GL10.GL_UNSIGNED_BYTE, data.indexes);
         }
 
         //关闭颜色数组设置
