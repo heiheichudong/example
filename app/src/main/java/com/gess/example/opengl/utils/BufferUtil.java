@@ -21,7 +21,7 @@ public class BufferUtil {
         return floatBuffer;
     }
 
-    public static Buffer getBuffer(int[] arr) {
+    public static IntBuffer getBuffer(int[] arr) {
         IntBuffer mBuffer;
         //先初始化buffer,数组的长度*4,因为一个int占4个字节
         ByteBuffer qbb = ByteBuffer.allocateDirect(arr.length * 4);

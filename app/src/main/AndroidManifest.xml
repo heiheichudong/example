@@ -27,7 +27,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".opengl.gl4.GlfourActivity"></activity>
+        <activity android:name=".opengl.gl5.GlfiveActivity"></activity>
+        <activity android:name=".opengl.gl4.GlfourActivity" />
         <activity android:name=".opengl.gl3.GlthreeActivity" />
         <activity android:name=".opengl.GlActivity" />
         <activity android:name=".opengl.gl2.GltwoActivity" />
