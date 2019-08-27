@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.gess.example.R;
 import com.gess.example.statusBar.StatusActivity;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class DiyViewTestActivitty extends AppCompatActivity implements View.OnClickListener, RecordVideoView.changeRecordlistent {
 
@@ -28,7 +28,7 @@ public class DiyViewTestActivitty extends AppCompatActivity implements View.OnCl
         videoView.setRecordlistent(this);
 
 
-
+        findViewById(R.id.btn_sva).setOnClickListener(this);
     }
 
     @Override
@@ -44,6 +44,9 @@ public class DiyViewTestActivitty extends AppCompatActivity implements View.OnCl
 //                if (videoView.getRecordVideoStatus() == RecordVideoView.status.ACTION_AFTER) {
 //                    videoView.setRecordVideoStatus(RecordVideoView.status.SCALE_BEFORE);
 //                }
+                break;
+            case R.id.btn_sva:
+                startActivity(new Intent(this,ScaleViewActivity.class));
                 break;
         }
     }
