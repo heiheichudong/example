@@ -4,6 +4,7 @@ import com.gess.example.opengl.utils.BufferUtil;
 
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
 
 public class Data {
     private float[] verticesf = new float[]{
@@ -125,5 +126,32 @@ public class Data {
     public FloatBuffer specularBuffer = BufferUtil.getBuffer(specular);
     float[] emission = new float[]{0.0f, 0.4f, 0.1f, 1.0f};//EMISSION
     public FloatBuffer emissionBuffer = BufferUtil.getBuffer(emission);
+
+    int[] textrue = new int[1];
+    public IntBuffer textrueBuffer = BufferUtil.getBuffer(textrue);
+
+    float[] texCoordsSquare = new float[]{
+            0.0f, 1.0f,
+            1.0f, 1.0f,
+            0.0f, 0.0f,
+            1.0f, 0.0f
+    };
+    public FloatBuffer texCoordsBuffer = BufferUtil.getBuffer(texCoordsSquare);
+    float[] texCoordsSquareVertices = new float[]{
+            -1.0f, 1.0f, -0.0f,
+            1.0f, 1.0f, -0.0f,
+            -1.0f, -1.0f, -0.0f,
+            1.0f, -1.0f, -0.0f
+    };
+    public FloatBuffer texCoordsSquareVerticesBuffer = BufferUtil.getBuffer(texCoordsSquareVertices);
+
+    float[] texCoordsSquareNormals = new float[]{
+            -1.0f, 1.0f, -0.0f,
+            1.0f, 1.0f, -0.0f,
+            -1.0f, -1.0f, -0.0f,
+            1.0f, -1.0f, -0.0f
+    };
+    public FloatBuffer texCoordsSquareNormalsBuffer = BufferUtil.getBuffer(texCoordsSquareNormals);
+
 
 }

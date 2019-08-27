@@ -11,6 +11,7 @@ import com.gess.example.opengl.gl1.GlOneActivity;
 import com.gess.example.opengl.gl2.GltwoActivity;
 import com.gess.example.opengl.gl3.GlthreeActivity;
 import com.gess.example.opengl.gl4.GlfourActivity;
+import com.gess.example.opengl.gl5.GlfiveActivity;
 
 public class GlActivity extends AppCompatActivity {
 
@@ -33,6 +34,9 @@ public class GlActivity extends AppCompatActivity {
                 break;
             case R.id.gl4:
                 startActivity(new Intent(this, GlfourActivity.class));
+                break;
+            case R.id.gl5:
+                startActivity(new Intent(this, GlfiveActivity.class));
                 break;
             default:
                 break;
