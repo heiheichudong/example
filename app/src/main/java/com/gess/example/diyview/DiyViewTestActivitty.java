@@ -29,6 +29,7 @@ public class DiyViewTestActivitty extends AppCompatActivity implements View.OnCl
 
 
         findViewById(R.id.btn_sva).setOnClickListener(this);
+        findViewById(R.id.btn_ssva).setOnClickListener(this);
     }
 
     @Override
@@ -46,19 +47,22 @@ public class DiyViewTestActivitty extends AppCompatActivity implements View.OnCl
 //                }
                 break;
             case R.id.btn_sva:
-                startActivity(new Intent(this,ScaleViewActivity.class));
+                startActivity(new Intent(this, ScaleViewActivity.class));
+                break;
+            case R.id.btn_ssva:
+                startActivity(new Intent(this, SimpleScaleViewActivity.class));
                 break;
         }
     }
 
     @Override
     public void recording() {
-        Log.d(RecordVideoView.TAG,"录制中 ... ");
+        Log.d(RecordVideoView.TAG, "录制中 ... ");
     }
 
     @Override
     public void stopRecord() {
-        Log.d(RecordVideoView.TAG,"已停止录制 ... ");
+        Log.d(RecordVideoView.TAG, "已停止录制 ... ");
     }
 
     @Override

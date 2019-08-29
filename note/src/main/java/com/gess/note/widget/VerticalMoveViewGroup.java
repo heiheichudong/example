@@ -1,17 +1,13 @@
 package com.gess.note.widget;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
-public class VerticalMoveViewGroup extends LinearLayout {
+public class VerticalMoveViewGroup extends RelativeLayout {
 
     public VerticalMoveViewGroup(Context context) {
         super(context);
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
-    }
+
 }
