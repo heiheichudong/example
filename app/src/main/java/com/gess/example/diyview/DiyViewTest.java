@@ -5,10 +5,10 @@ import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.gess.note.utils.Logger;
-import com.gess.note.utils.SizeUtils;
-
 import androidx.annotation.Nullable;
+
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.SizeUtils;
 
 public class DiyViewTest extends View {
     public static String TAG = "DiyViewTest";
@@ -30,8 +30,8 @@ public class DiyViewTest extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
-        Logger.debug(TAG, "view 宽度 = " + SizeUtils.px2dp(MeasureSpec.getSize(widthMeasureSpec)) + "dp");
-        Logger.debug(TAG, "view 高度 = " + SizeUtils.px2dp(MeasureSpec.getSize(heightMeasureSpec)) + "dp");
+        LogUtils.d(TAG, "view 宽度 = " + SizeUtils.px2dp(MeasureSpec.getSize(widthMeasureSpec)) + "dp");
+        LogUtils.d(TAG, "view 高度 = " + SizeUtils.px2dp(MeasureSpec.getSize(heightMeasureSpec)) + "dp");
         switch (MeasureSpec.getMode(widthMeasureSpec)) {
             case MeasureSpec.EXACTLY://match_parent 确定的数值
                 break;

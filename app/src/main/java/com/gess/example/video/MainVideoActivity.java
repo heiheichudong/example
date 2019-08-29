@@ -7,13 +7,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.MainApp;
 import com.gess.example.R;
 import com.gess.example.widget.TextureVideoView;
-import com.gess.note.utils.Logger;
 import com.tencent.ijk.media.player.IMediaPlayer;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainVideoActivity extends AppCompatActivity {
 
@@ -27,7 +27,7 @@ public class MainVideoActivity extends AppCompatActivity {
     }
 
     private void setTextureTest() {
-        Logger.debug(DiyTextureView.TAG,"prepareAsync");
+        LogUtils.d(DiyTextureView.TAG,"prepareAsync");
         ((DiyTextureView) findViewById(R.id.diy_tv)).setPath("http://mvideo.mimi.com/m3u8/2019/2/3/2D70FDBBC033B3229D3E07D4AC4CB18F0B630B1E82DE532532D05D49E1340A43/360/out.m3u8");
     }
 

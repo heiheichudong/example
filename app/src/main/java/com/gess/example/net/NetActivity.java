@@ -4,15 +4,15 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.R;
 import com.gess.example.net.upload.UploadModel;
-import com.gess.note.utils.Logger;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class NetActivity extends AppCompatActivity {
 
@@ -32,9 +32,9 @@ public class NetActivity extends AppCompatActivity {
                 map.put("timeLength", "111111");
                 file = new File(Environment.getExternalStorageDirectory().getPath() + "/123.mp3");
 
-                Logger.debug(TAG, "file--- 是否存在 = " + file.exists());
-                Logger.debug(TAG, "file--- 是否是file = " + file.isFile());
-                Logger.debug(TAG, "file--- 是否是Directory = " + file.isDirectory());
+                LogUtils.d(TAG, "file--- 是否存在 = " + file.exists());
+                LogUtils.d(TAG, "file--- 是否是file = " + file.isFile());
+                LogUtils.d(TAG, "file--- 是否是Directory = " + file.isDirectory());
 
 //                OkHttpUtils.postFile().file(file).url("http://www.love.tv/voice/upload.json").headers(map).build().execute(new Callback() {
 //                    @Override

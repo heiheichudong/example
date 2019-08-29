@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.blankj.utilcode.util.SizeUtils;
 import com.gess.example.R;
 import com.gess.example.pic.ImageViewActivity;
 import com.gess.example.pic.PictureActivity;
-import com.gess.note.utils.SizeUtils;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class StatusActivity extends AppCompatActivity {
 

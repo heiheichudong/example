@@ -14,9 +14,10 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.gess.note.utils.SizeUtils;
 
 import androidx.annotation.Nullable;
+
+import com.blankj.utilcode.util.SizeUtils;
 
 public class VideoRecordView extends View  {
 

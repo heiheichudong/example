@@ -5,13 +5,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.R;
-import com.gess.note.utils.Logger;
 import com.yalantis.ucrop.view.GestureCropImageView;
 import com.yalantis.ucrop.view.OverlayView;
 import com.yalantis.ucrop.view.UCropView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class PictureActivity extends AppCompatActivity {
 
@@ -34,7 +34,7 @@ public class PictureActivity extends AppCompatActivity {
     private void setGesture() {
         try{
             String path = Environment.getExternalStorageDirectory().getPath() + "/Huawei/MagazineUnlock/aaa.jpg";
-            Logger.debug("path = " + path);
+            LogUtils.d("path = " + path);
             Uri uri = Uri.parse("file://" + path);
             mGestureCropImageView.setImageUri(uri,uri);
             mGestureCropImageView.setRotateEnabled(true);//是否可以旋转(默认为true)

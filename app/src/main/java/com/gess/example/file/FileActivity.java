@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 
-import com.gess.example.R;
-import com.gess.note.utils.Logger;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.blankj.utilcode.util.LogUtils;
+import com.gess.example.R;
 
 public class FileActivity extends AppCompatActivity {
 
@@ -21,8 +21,8 @@ public class FileActivity extends AppCompatActivity {
         findViewById(R.id.tv_file_copy).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Logger.debug(MEDIA_FILE_TMP);
-                Logger.debug(MEDIA_SAVE_DIR);
+                LogUtils.d(MEDIA_FILE_TMP);
+                LogUtils.d(MEDIA_SAVE_DIR);
                 file.copyFileToDir(MEDIA_FILE_TMP + "/filter.jpg", MEDIA_SAVE_DIR);
             }
         });

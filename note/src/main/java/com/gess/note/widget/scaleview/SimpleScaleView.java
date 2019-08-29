@@ -12,9 +12,9 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.SizeUtils;
 import com.gess.note.R;
-import com.gess.note.utils.LogUtils;
-import com.gess.note.utils.SizeUtils;
 
 public class SimpleScaleView extends View {
 

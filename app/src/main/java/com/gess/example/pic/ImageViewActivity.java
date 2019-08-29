@@ -8,10 +8,11 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.gess.example.R;
-import com.gess.note.utils.Logger;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.blankj.utilcode.util.LogUtils;
+import com.gess.example.R;
+
 
 public class ImageViewActivity extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class ImageViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_image_view);
         imageView = findViewById(R.id.iv_pic_act);
         String path = Environment.getExternalStorageDirectory().getPath() + "/Huawei/MagazineUnlock/aaa.jpg";
-        Logger.debug("path = " + path);
+        LogUtils.d("path = " + path);
         bitmap = BitmapFactory.decodeFile(path);
         imageView.setImageBitmap(bitmap);
         findViewById(R.id.btn_scale).setOnClickListener(new View.OnClickListener() {

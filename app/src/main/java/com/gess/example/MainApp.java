@@ -3,7 +3,7 @@ package com.gess.example;
 import android.app.Application;
 import android.util.DisplayMetrics;
 
-import com.gess.note.utils.Utils;
+import com.blankj.utilcode.util.Utils;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;

@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.Surface;
 import android.view.TextureView;
 
-import com.gess.note.utils.Logger;
+import com.blankj.utilcode.util.LogUtils;
 import com.tencent.ijk.media.player.IMediaPlayer;
 import com.tencent.ijk.media.player.IjkMediaPlayer;
 
@@ -56,7 +56,7 @@ public class DiyTextureView extends TextureView implements TextureView.SurfaceTe
             if (mMediaPlayer == null){
                 mMediaPlayer = new IjkMediaPlayer();
             }
-            Logger.debug(TAG,"prepareAsync");
+            LogUtils.d(TAG,"prepareAsync");
             mMediaPlayer.setDataSource(getContext(),path);
             mMediaPlayer.prepareAsync();
         }catch (Exception e){
@@ -98,7 +98,7 @@ public class DiyTextureView extends TextureView implements TextureView.SurfaceTe
         mMediaPlayer.setOnPreparedListener(new IMediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(IMediaPlayer iMediaPlayer) {
-                Logger.debug(TAG,"setOnPreparedListener");
+                LogUtils.d(TAG,"setOnPreparedListener");
 //                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                 mMediaPlayer.setVolume(1f,1f);
                 mMediaPlayer.start();
@@ -110,8 +110,8 @@ public class DiyTextureView extends TextureView implements TextureView.SurfaceTe
             public void onVideoSizeChanged(IMediaPlayer iMediaPlayer, int i, int i1, int i2, int i3) {
                 mVideoHeight = mMediaPlayer.getVideoHeight();
                 mVideoWidth = mMediaPlayer.getVideoWidth();
-                Logger.debug(TAG,"mVideoHeight = " + mVideoHeight );
-                Logger.debug(TAG,"mVideoWidth = " + mVideoWidth);
+                LogUtils.d(TAG,"mVideoHeight = " + mVideoHeight );
+                LogUtils.d(TAG,"mVideoWidth = " + mVideoWidth);
 //                updateTextureViewSizeCenterCrop();
             }
         });
@@ -122,14 +122,14 @@ public class DiyTextureView extends TextureView implements TextureView.SurfaceTe
 
     public void start(){
         if (mMediaPlayer != null){
-            Logger.debug(TAG,"start");
+            LogUtils.d(TAG,"start");
             mMediaPlayer.start();
         }
     }
 
     public void pause(){
         if (mMediaPlayer != null){
-            Logger.debug(TAG,"pause");
+            LogUtils.d(TAG,"pause");
             mMediaPlayer.pause();
         }
     }

@@ -14,7 +14,8 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.gess.note.utils.SizeUtils;
+import com.blankj.utilcode.util.SizeUtils;
+
 
 public class RecordVideoView extends SurfaceView implements SurfaceHolder.Callback {
 

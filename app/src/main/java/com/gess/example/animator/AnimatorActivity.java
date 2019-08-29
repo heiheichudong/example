@@ -8,11 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.gess.example.R;
-import com.gess.note.utils.Logger;
-import com.gess.note.utils.SizeUtils;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.SizeUtils;
+import com.gess.example.R;
+
 
 public class AnimatorActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,11 +36,11 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void run() {
                 height = findViewById(R.id.iv_bg).getHeight();
-                Logger.debug(TAG, "height eeeeeeeeee= " + height);
+                LogUtils.d(TAG, "height eeeeeeeeee= " + height);
                 width = findViewById(R.id.iv_bg).getWidth();
-                Logger.debug(TAG, "width eeeeeeeeee= " + width);
+                LogUtils.d(TAG, "width eeeeeeeeee= " + width);
                 r = (float) width / height;
-                Logger.debug(TAG, "r eeeeeeeeee= " + r);
+                LogUtils.d(TAG, "r eeeeeeeeee= " + r);
 
             }
         });
@@ -52,7 +53,7 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
                 if (animator != null && animator.isRunning()) {
                     return;
                 }
-                Logger.debug(TAG, "height = " + height);
+                LogUtils.d(TAG, "height = " + height);
                 if (animator == null) {
                     animator = ObjectAnimator.ofFloat(iv_animator, "translationY", 0, -SizeUtils.dp2px(distance));
 
@@ -68,7 +69,7 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
 //                            findViewById(R.id.iv_bg).requestFocus();
                             if (v == SizeUtils.dp2px(distance)){
                                 height = height - v;
-                                Logger.debug(TAG, "addUpdateListener777      = " + height);
+                                LogUtils.d(TAG, "addUpdateListener777      = " + height);
                             }
                         }
                     });
@@ -93,7 +94,7 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
 //                                Logger.debug(TAG,"mAnimator = " + (height + v));
                                 if (v == SizeUtils.dp2px(distance)){
                                     height = height + v;
-                                    Logger.debug(TAG, "addUpdateListener      = " + height);
+                                    LogUtils.d(TAG, "addUpdateListener      = " + height);
                                 }
                             }
                         });
@@ -114,13 +115,13 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
 //                                  findViewById(R.id.iv_bg).requestFocus();
                                 if (v == SizeUtils.dp2px(distance)){
                                     height = height - v;
-                                    Logger.debug(TAG, "addUpdateListener8888   = " + height);
+                                    LogUtils.d(TAG, "addUpdateListener8888   = " + height);
                                 }
                             }
                         });
                     }
                 }
-                Logger.debug(TAG, "顺序 = " + animator.getRepeatMode());
+                LogUtils.d(TAG, "顺序 = " + animator.getRepeatMode());
                 animator.setDuration(500);
                 mAnimator.setDuration(500);
                 AnimatorSet animatorSet = new AnimatorSet();

@@ -9,9 +9,10 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.gess.note.utils.SizeUtils;
 
 import androidx.annotation.Nullable;
+
+import com.blankj.utilcode.util.SizeUtils;
 
 public class CircleView extends View {
 

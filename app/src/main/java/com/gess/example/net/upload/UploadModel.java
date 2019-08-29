@@ -1,11 +1,11 @@
 package com.gess.example.net.upload;
 
 
+import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.bean.BaseHttpBean;
 import com.gess.example.bean.VoiceBean;
 import com.gess.example.net.NetActivity;
 import com.gess.example.net.URL;
-import com.gess.note.utils.Logger;
 
 import java.io.File;
 import java.util.Iterator;
@@ -34,7 +34,7 @@ public class UploadModel {
         Iterator<String> iterator = map.keySet().iterator();
         while (iterator.hasNext()) {
             String key = iterator.next();
-            Logger.debug(NetActivity.TAG,"map = " + key);
+            LogUtils.d(NetActivity.TAG,"map = " + key);
             builder.addFormDataPart(key, map.get(key));
         }
         return builder.build();
@@ -58,7 +58,7 @@ public class UploadModel {
                 .subscribe(new Consumer<BaseHttpBean<VoiceBean>>() {
                     @Override
                     public void accept(BaseHttpBean<VoiceBean> result) throws Exception {
-                        Logger.debug(NetActivity.TAG,"result = " + result);
+                        LogUtils.d(NetActivity.TAG,"result = " + result);
                     }
                 });
     }

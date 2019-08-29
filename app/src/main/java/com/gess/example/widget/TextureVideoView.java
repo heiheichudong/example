@@ -37,7 +37,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.MediaController;
 import android.widget.MediaController.MediaPlayerControl;
 
-import com.gess.note.utils.Logger;
+import com.blankj.utilcode.util.LogUtils;
 import com.tencent.ijk.media.player.IMediaPlayer;
 import com.tencent.ijk.media.player.IjkMediaPlayer;
 
@@ -190,7 +190,7 @@ public class TextureVideoView extends TextureView
         mVideoHeight = 0;
 
         setSurfaceTextureListener(mSurfaceTextureListener);
-        Logger.debug(TAG, "setSurfaceTextureListener");
+        LogUtils.d(TAG, "setSurfaceTextureListener");
 
         //setFocusable(false);
         //setFocusableInTouchMode(true);
@@ -426,13 +426,13 @@ public class TextureVideoView extends TextureView
             mCurrentState = STATE_PREPARING;
             attachMediaController();
         } catch (IOException ex) {
-            Logger.debug(TAG, "Unable to open content: " + mUri + ex);
+            LogUtils.d(TAG, "Unable to open content: " + mUri + ex);
             mCurrentState = STATE_ERROR;
             mTargetState = STATE_ERROR;
             //  mErrorListener.onError(  IMediaPlayer,   IjkMediaPlayer.MEDIA_ERROR_UNKNOWN, 0);
             return;
         } catch (IllegalArgumentException ex) {
-            Logger.debug(TAG, "Unable to open content: " + mUri + ex);
+            LogUtils.d(TAG, "Unable to open content: " + mUri + ex);
             mCurrentState = STATE_ERROR;
             mTargetState = STATE_ERROR;
             // mErrorListener.onError(  IMediaPlayer,   IjkMediaPlayer.MEDIA_ERROR_UNKNOWN, 0);
@@ -666,7 +666,7 @@ public class TextureVideoView extends TextureView
     SurfaceTextureListener mSurfaceTextureListener = new SurfaceTextureListener() {
         @Override
         public void onSurfaceTextureSizeChanged(final SurfaceTexture surface, final int width, final int height) {
-            Logger.debug(TAG, "onSurfaceTextureSizeChanged");
+            LogUtils.d(TAG, "onSurfaceTextureSizeChanged");
             boolean isValidState = (mTargetState == STATE_PLAYING);
             boolean hasValidSize = (width > 0 && height > 0);
             if (mMediaPlayer != null && isValidState && hasValidSize) {
@@ -684,7 +684,7 @@ public class TextureVideoView extends TextureView
 
         @Override
         public void onSurfaceTextureAvailable(final SurfaceTexture surface, final int width, final int height) {
-            Logger.debug(TAG, "onSurfaceTextureAvailable");
+            LogUtils.d(TAG, "onSurfaceTextureAvailable");
             mSurface = new Surface(surface);
             try {
                 if (mMediaPlayer != null) {
@@ -703,7 +703,7 @@ public class TextureVideoView extends TextureView
 
         @Override
         public boolean onSurfaceTextureDestroyed(final SurfaceTexture surface) {
-            Logger.debug(TAG, "onSurfaceTextureDestroyed");
+            LogUtils.d(TAG, "onSurfaceTextureDestroyed");
             // after we return from this we can't use the surface any more
             if (true) return true;
             if (mSurface != null) {
@@ -717,7 +717,7 @@ public class TextureVideoView extends TextureView
 
         @Override
         public void onSurfaceTextureUpdated(final SurfaceTexture surface) {
-            Logger.debug(TAG, "onSurfaceTextureUpdated");
+            LogUtils.d(TAG, "onSurfaceTextureUpdated");
             // do nothing
         }
     };
@@ -849,7 +849,7 @@ public class TextureVideoView extends TextureView
 
     @Override
     public int getDuration() {
-        Logger.debug("timetime", "  " + mCurrentState);
+        LogUtils.d("timetime", "  " + mCurrentState);
         if (isInPlaybackState()) {
             return (int) mMediaPlayer.getDuration();
         }
