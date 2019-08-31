@@ -14,7 +14,8 @@ public class GlfiveActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         glSurfaceView = new GLSurfaceView(this);
-        glSurfaceView.setRenderer(new GlfiveRenderer(this));
+//        glSurfaceView.setRenderer(new GlfiveRenderer(this));
+//        glSurfaceView.setRenderer(new GlfiveRenderer(resource));
         setContentView(glSurfaceView);
 //        setContentView(R.layout.activity_glfive);
     }
@@ -22,12 +23,16 @@ public class GlfiveActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        glSurfaceView.onResume();
+        if (glSurfaceView != null){
+            glSurfaceView.onResume();
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        glSurfaceView.onPause();
+        if (glSurfaceView != null){
+            glSurfaceView.onPause();
+        }
     }
 }

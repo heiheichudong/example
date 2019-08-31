@@ -36,7 +36,7 @@ public class FileActivity extends AppCompatActivity {
 
         Glide.with(this)
                 .asBitmap()
-                .load("http://mimg.com.tv/img/2019/8/17/418226540F7EA75F13061F370A6DD17277C65738347E4FC797DCF52B8970F9D1")
+                .load("http://mimg.com.tv/img/2019/1/31/F4C58BE645E5203B931385FA55EC86B259C1203DDDC9055E21D82572DB952B3A")
                 .into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {

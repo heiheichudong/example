@@ -23,7 +23,12 @@ public class GlfiveRenderer implements GLSurfaceView.Renderer {
     int[] mTexture;
 
     public GlfiveRenderer(Context context) {
-        this.mBitmapTexture = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher);
+        this.mBitmapTexture = BitmapFactory.decodeResource(context.getResources(), R.drawable.l0);
+        this.mTexture = new int[1];
+    }
+
+    public GlfiveRenderer(Bitmap bitmap) {
+        this.mBitmapTexture = bitmap;
         this.mTexture = new int[1];
     }
 
@@ -46,17 +51,17 @@ public class GlfiveRenderer implements GLSurfaceView.Renderer {
         //打开混色功能
         gl.glEnable(GL10.GL_BLEND);
         //指定混色方法
-        gl.glBlendFunc(GL10.GL_ONE,GL10.GL_SRC_COLOR);
+        gl.glBlendFunc(GL10.GL_ONE, GL10.GL_SRC_COLOR);
         //创建纹理
-        gl.glGenTextures(1,data.textrueBuffer);
+        gl.glGenTextures(1, data.textrueBuffer);
         mTexture[0] = data.textrueBuffer.get();
         //绑定纹理
-        gl.glBindTexture(GL10.GL_TEXTURE_2D,mTexture[0]);
+        gl.glBindTexture(GL10.GL_TEXTURE_2D, mTexture[0]);
 
-        gl.glTexParameterx(GL10.GL_TEXTURE_2D,GL10.GL_TEXTURE_MIN_FILTER,GL10.GL_LINEAR);
-        gl.glTexParameterx(GL10.GL_TEXTURE_2D,GL10.GL_TEXTURE_MAG_FILTER,GL10.GL_LINEAR);
+        gl.glTexParameterx(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MIN_FILTER, GL10.GL_LINEAR);
+        gl.glTexParameterx(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MAG_FILTER, GL10.GL_LINEAR);
         //生成纹理
-        GLUtils.texImage2D(GL10.GL_TEXTURE_2D,0,mBitmapTexture,0);
+        GLUtils.texImage2D(GL10.GL_TEXTURE_2D, 0, mBitmapTexture, 0);
     }
 
     @Override
@@ -86,7 +91,42 @@ public class GlfiveRenderer implements GLSurfaceView.Renderer {
         GLU.gluLookAt(gl, 0, 0, 3, 0, 0, 0, 0, 1, 0);
         //绘制三角形
 //        drawTriangle(gl);
+        drawSquare(gl);
+    }
 
+    private void drawSquare(GL10 gl) {
+        //设置模型位置 （平移）
+//        gl.glTranslatef(0, 0, 0);
+        //设置旋转(y轴)
+//        gl.glRotatef(rot, 1, 0, 0);
+        //放大
+//        gl.glScalef(2, 2, 2);
+        //允许设置顶点
+        // （状态开关） 这里指开启
+        // GL10.GL_VERTEX_ARRAY ->顶点
+        gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
+        //允许设置法线数组
+        gl.glEnableClientState(GL10.GL_NORMAL_ARRAY);
+        //允许设置纹理坐标数组
+        gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+        //绑定纹理
+        gl.glBindTexture(GL10.GL_TEXTURE_2D, mTexture[0]);
+        //设置顶点数组
+        gl.glVertexPointer(3, GL10.GL_FLOAT, 0, data.texCoordsSquareVerticesBuffer);
+        //设置法线数组
+        gl.glNormalPointer(GL10.GL_FLOAT, 0, data.texCoordsSquareNormalsBuffer);
+        //绘制正方形
+        gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
+        //设置纹理坐标数组
+        gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, data.texCoordsBuffer);
+        //关闭纹理坐标数组
+        gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+        //关闭法线数组设置
+        gl.glDisableClientState(GL10.GL_NORMAL_ARRAY);
+        //取消顶点设置 （状态开关） 这里指指关闭
+        gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
+
+        rot += 0.5f;
     }
 
     private void drawTriangle(GL10 gl) {
