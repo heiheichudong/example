@@ -1,6 +1,8 @@
 package com.gess.example.opengl.utils;
 
-import java.nio.Buffer;
+import com.blankj.utilcode.util.LogUtils;
+import com.gess.example.opengl.Data;
+
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
@@ -59,4 +61,22 @@ public class BufferUtil {
             0.f, 0.525731f, -0.850651f,
             0.f, 0.525731f, 0.850651f
     };
+
+    public static float[] getVertices(int w, int h) {
+        LogUtils.d(Data.TAG,"w = " + w + "h = " + h);
+        float wf = 1f, hf = 1f;
+        if (w > h) {
+            wf = (float) h / (float) w;
+        } else if (h > w) {
+            hf = (float) w / (float) h;
+        }
+        LogUtils.d(Data.TAG,"wf = " + wf + "hf = " + hf);
+        float[] vs = new float[]{
+                0, -hf,
+                wf, -hf,
+                0, 0,
+                wf, 0
+        };
+        return vs;
+    }
 }

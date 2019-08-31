@@ -14,7 +14,7 @@ public class GlfiveActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         glSurfaceView = new GLSurfaceView(this);
-//        glSurfaceView.setRenderer(new GlfiveRenderer(this));
+        glSurfaceView.setRenderer(new GlfiveRenderer(this));
 //        glSurfaceView.setRenderer(new GlfiveRenderer(resource));
         setContentView(glSurfaceView);
 //        setContentView(R.layout.activity_glfive);

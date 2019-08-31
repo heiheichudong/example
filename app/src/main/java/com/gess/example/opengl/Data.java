@@ -7,6 +7,8 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 
 public class Data {
+    public static String TAG = "opengl_debug";
+
     private float[] verticesf = new float[]{
             0.f, -0.525731f, 0.850651f,
             0.850651f, 0.f, 0.525731f,
@@ -131,12 +133,13 @@ public class Data {
     public IntBuffer textrueBuffer = BufferUtil.getBuffer(textrue);
 
     float[] texCoordsSquare = new float[]{
-            0.0f, 1.0f,
-            1.0f, 1.0f,
+            0.0f, -1.0f,
+            1.0f, -1.0f,
             0.0f, 0.0f,
             1.0f, 0.0f
     };
     public FloatBuffer texCoordsBuffer = BufferUtil.getBuffer(texCoordsSquare);
+
     float[] texCoordsSquareVertices = new float[]{
             -1.0f, 1.0f, -0.0f,
             1.0f, 1.0f, -0.0f,
@@ -152,6 +155,5 @@ public class Data {
             1.0f, -1.0f, -0.0f
     };
     public FloatBuffer texCoordsSquareNormalsBuffer = BufferUtil.getBuffer(texCoordsSquareNormals);
-
 
 }
