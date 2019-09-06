@@ -8,12 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.gess.example.animator.AnimatorActivity;
 import com.gess.example.diyview.DiyViewTestActivitty;
 import com.gess.example.douyin.DouyinActivity;
 import com.gess.example.file.FileActivity;
 import com.gess.example.fragment.FragmentContainerActivity;
 import com.gess.example.gesture.GestureActivity;
+import com.gess.example.material.MaterialDesignActivity;
 import com.gess.example.net.NetActivity;
 import com.gess.example.opengl.GlActivity;
 import com.gess.example.regular.RegularActivity;
@@ -24,8 +27,6 @@ import com.tencent.rtmp.TXLiveBase;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_13:
                 startActivity(new Intent(this, GlActivity.class));
+                break;
+            case R.id.btn_14:
+                startActivity(new Intent(this, MaterialDesignActivity.class));
                 break;
         }
     }

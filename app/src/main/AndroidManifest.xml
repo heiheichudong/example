@@ -27,7 +27,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".diyview.SimpleScaleViewActivity"></activity>
+        <activity android:name=".material.MaterialDesignActivity"></activity>
+        <activity android:name=".material.TabTestActivity" />
+        <activity android:name=".diyview.SimpleScaleViewActivity" />
         <activity android:name=".opengl.gl5.GlfiveActivity" />
         <activity android:name=".opengl.gl4.GlfourActivity" />
         <activity android:name=".diyview.ScaleViewActivity" />

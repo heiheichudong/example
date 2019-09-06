@@ -112,6 +112,13 @@
             android:onClick="btn"
             android:text="opengl" />
 
+        <Button
+            android:id="@+id/btn_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btn"
+            android:text="material" />
+
         <com.gess.example.diyview.CircleView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
