@@ -9,6 +9,7 @@ import android.opengl.GLUtils;
 
 import com.gess.example.R;
 import com.gess.example.opengl.Data;
+import com.gess.example.opengl.utils.BufferUtil;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -64,8 +65,8 @@ public class GlfiveRenderer implements GLSurfaceView.Renderer {
 //        gl.glTexParameterx(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_S, GL10.GL_REPEAT);
 //        gl.glTexParameterx(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_T, GL10.GL_REPEAT);
         //限制拉伸
-        gl.glTexParameterx(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_S,GL10.GL_CLAMP_TO_EDGE);
-        gl.glTexParameterx(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_T,GL10.GL_CLAMP_TO_EDGE);
+//        gl.glTexParameterx(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_S,GL10.GL_CLAMP_TO_EDGE);
+//        gl.glTexParameterx(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_T,GL10.GL_CLAMP_TO_EDGE);
         //生成纹理
         GLUtils.texImage2D(GL10.GL_TEXTURE_2D, 0, mBitmapTexture, 0);
     }
@@ -124,8 +125,8 @@ public class GlfiveRenderer implements GLSurfaceView.Renderer {
         //绘制正方形
         gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
         //设置纹理坐标数组
-        gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, data.texCoordsBuffer);
-//        gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, BufferUtil.getBuffer(BufferUtil.getVertices(mBitmapTexture.getWidth(), mBitmapTexture.getHeight())));
+//        gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, data.texCoordsBuffer);
+        gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, BufferUtil.getBuffer(BufferUtil.getVertices(mBitmapTexture.getWidth(), mBitmapTexture.getHeight())));
         //关闭纹理坐标数组
         gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
         //关闭法线数组设置
@@ -133,7 +134,7 @@ public class GlfiveRenderer implements GLSurfaceView.Renderer {
         //取消顶点设置 （状态开关） 这里指指关闭
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
 
-        rot += 0.5f;
+//        rot += 0.5f;
     }
 
     private void drawTriangle(GL10 gl) {
