@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.gess.example.R;
-
 import androidx.fragment.app.Fragment;
+
+import com.gess.example.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +61,7 @@ public class AFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

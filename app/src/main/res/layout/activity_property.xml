@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".property.PropertyActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:alpha="0.6"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="#E6EE0E0E"
+        android:backgroundTintMode="src_atop"
+        android:drawingCacheQuality="auto"
+        android:duplicateParentState="true"
+        android:elevation="24dp"
+        android:fadingEdge="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+    <TextView
+        android:id="@+id/tv_textview"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:text="sdadasdasd sdlkasdnalsjhsdlkahkahlkfhas;fhsfashdfiuafsdhf;lkahsdfkhafhsal;dhfslkdfakjbfkajshdffksbdflskdjfhk;sddhfkbsdfkjahsdf;klasbndfkhsdf;sldfknfb;ksjhdfjkasdfbbbjsdhfl;jkdjsb;kfjhks;dbfnlasdhfjkasbdflsdbfjksdh;fkbdasklfhkjj" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="24dp"
+        android:shadowColor="#E91010"
+        android:shadowDx="20"
+        android:text="Button"
+        android:translationX="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_textview" />
+</androidx.constraintlayout.widget.ConstraintLayout>

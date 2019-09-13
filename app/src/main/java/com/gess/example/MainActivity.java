@@ -19,6 +19,7 @@ import com.gess.example.gesture.GestureActivity;
 import com.gess.example.material.MaterialDesignActivity;
 import com.gess.example.net.NetActivity;
 import com.gess.example.opengl.GlActivity;
+import com.gess.example.property.PropertyActivity;
 import com.gess.example.regular.RegularActivity;
 import com.gess.example.statusBar.StatusActivity;
 import com.gess.example.video.FrameActivity;
@@ -85,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_14:
                 startActivity(new Intent(this, MaterialDesignActivity.class));
+                break;
+            case R.id.btn_15:
+                startActivity(new Intent(this, PropertyActivity.class));
                 break;
         }
     }
