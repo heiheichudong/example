@@ -9,7 +9,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment_a">Hello blank fragment A</string>
     <string name="hello_blank_fragment_b">Hello blank fragment B</string>
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
