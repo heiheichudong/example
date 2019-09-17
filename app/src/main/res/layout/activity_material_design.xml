@@ -19,5 +19,13 @@
             android:text="tab"
             android:textAllCaps="false"
             tools:text="tab" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/design_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="design"
+            android:text="drawer"
+            android:textAllCaps="false"
+            tools:text="drawer" />
     </LinearLayout>
 </ScrollView>

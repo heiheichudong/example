@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".property.PropertyActivity"></activity>
         <activity
-            android:name=".Main2Activity"
+            android:name=".material.DrawerActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".material.MaterialDesignActivity" />

@@ -17,9 +17,12 @@ public class MaterialDesignActivity extends AppCompatActivity {
     }
 
     public void design(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.design_tab:
                 startActivity(new Intent(this, TabTestActivity.class));
+                break;
+            case R.id.design_drawer:
+                startActivity(new Intent(this, DrawerActivity.class));
                 break;
         }
     }
