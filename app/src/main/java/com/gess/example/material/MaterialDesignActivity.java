@@ -24,6 +24,9 @@ public class MaterialDesignActivity extends AppCompatActivity {
             case R.id.design_drawer:
                 startActivity(new Intent(this, DrawerActivity.class));
                 break;
+            case R.id.design_bottom_nav:
+                startActivity(new Intent(this, BottomNavigationActivity.class));
+                break;
         }
     }
 }
