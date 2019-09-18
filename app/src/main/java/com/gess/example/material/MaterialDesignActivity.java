@@ -19,13 +19,25 @@ public class MaterialDesignActivity extends AppCompatActivity {
     public void design(View view) {
         switch (view.getId()) {
             case R.id.design_tab:
-                startActivity(new Intent(this, TabTestActivity.class));
+                startActivity(new Intent(this, TabbedActivity.class));
                 break;
             case R.id.design_drawer:
                 startActivity(new Intent(this, DrawerActivity.class));
                 break;
             case R.id.design_bottom_nav:
                 startActivity(new Intent(this, BottomNavigationActivity.class));
+                break;
+            case R.id.design_flow:
+                startActivity(new Intent(this, ItemListActivity.class));
+                break;
+            case R.id.design_basic:
+                startActivity(new Intent(this, BasicActivity.class));
+                break;
+            case R.id.design_fullscreen:
+                startActivity(new Intent(this, FullscreenActivity.class));
+                break;
+            case R.id.design_fragment:
+                startActivity(new Intent(this, FragmentActivity.class));
                 break;
         }
     }

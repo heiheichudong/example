@@ -19,6 +19,7 @@
             android:text="tab"
             android:textAllCaps="false"
             tools:text="tab" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/design_drawer"
             android:layout_width="match_parent"
@@ -27,6 +28,7 @@
             android:text="drawer"
             android:textAllCaps="false"
             tools:text="drawer" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/design_bottom_nav"
             android:layout_width="match_parent"
@@ -35,5 +37,39 @@
             android:text="bottom_nav"
             android:textAllCaps="false"
             tools:text="bottom_nav" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/design_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="design"
+            android:text="flow"
+            android:textAllCaps="false"
+            tools:text="flow" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/design_basic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="design"
+            android:text="basic"
+            android:textAllCaps="false"
+            tools:text="basic" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/design_fullscreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="design"
+            android:text="Fullscreen"
+            android:textAllCaps="false"
+            tools:text="Fullscreen" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/design_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="design"
+            android:text="fragment"
+            android:textAllCaps="false"
+            tools:text="fragment" />
     </LinearLayout>
 </ScrollView>

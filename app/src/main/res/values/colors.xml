@@ -8,4 +8,6 @@
     <color name="statusbar_bg">#FF006080</color>
     <color name="tran">#80FFFFFF</color>
     <color name="white">#FFFFFF</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>
