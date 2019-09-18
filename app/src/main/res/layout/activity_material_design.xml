@@ -55,6 +55,7 @@
             android:text="basic"
             android:textAllCaps="false"
             tools:text="basic" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/design_fullscreen"
             android:layout_width="match_parent"
@@ -63,6 +64,7 @@
             android:text="Fullscreen"
             android:textAllCaps="false"
             tools:text="Fullscreen" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/design_fragment"
             android:layout_width="match_parent"
@@ -71,5 +73,32 @@
             android:text="fragment"
             android:textAllCaps="false"
             tools:text="fragment" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/design_scrolling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="design"
+            android:text="scrolling"
+            android:textAllCaps="false"
+            tools:text="scrolling" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/design_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="design"
+            android:text="login"
+            android:textAllCaps="false"
+            tools:text="login" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/design_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="design"
+            android:text="@string/settings"
+            android:textAllCaps="false"
+            tools:text="@string/settings" />
     </LinearLayout>
 </ScrollView>

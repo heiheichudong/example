@@ -1,12 +1,13 @@
 package com.gess.example.material;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import com.gess.example.R;
+        import com.gess.example.R;
+        import com.gess.example.material.ui.login.LoginActivity;
 
 public class MaterialDesignActivity extends AppCompatActivity {
 
@@ -38,6 +39,15 @@ public class MaterialDesignActivity extends AppCompatActivity {
                 break;
             case R.id.design_fragment:
                 startActivity(new Intent(this, FragmentActivity.class));
+                break;
+            case R.id.design_scrolling:
+                startActivity(new Intent(this, ScrollingActivity.class));
+                break;
+            case R.id.design_login:
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
+            case R.id.design_settings:
+                startActivity(new Intent(this, SettingsActivity.class));
                 break;
         }
     }

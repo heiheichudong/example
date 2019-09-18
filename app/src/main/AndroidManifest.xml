@@ -27,10 +27,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service
+            android:name=".material.MyIntentService"
+            android:exported="false"></service>
+
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc" />
+
+        <service android:name=".material.MyMessagingService" />
+
+        <receiver android:name=".material.MessageReadReceiver">
+            <intent-filter>
+                <action android:name="com.gess.example.material.ACTION_MESSAGE_READ" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".material.MessageReplyReceiver">
+            <intent-filter>
+                <action android:name="com.gess.example.material.ACTION_MESSAGE_REPLY" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".material.SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".material.ui.login.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".material.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".material.TabbedActivity"
             android:label="@string/title_activity_tabbed"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".material.FragmentActivity" />
         <activity
             android:name=".material.FullscreenActivity"
