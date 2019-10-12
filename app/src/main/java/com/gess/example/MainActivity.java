@@ -6,7 +6,6 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +16,7 @@ import com.gess.example.file.FileActivity;
 import com.gess.example.fragment.FragmentContainerActivity;
 import com.gess.example.gesture.GestureActivity;
 import com.gess.example.material.MaterialDesignActivity;
+import com.gess.example.material.TabTestActivity;
 import com.gess.example.net.NetActivity;
 import com.gess.example.opengl.GlActivity;
 import com.gess.example.property.PropertyActivity;
@@ -50,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, MainVideoActivity.class));
                 break;
             case R.id.btn_3:
-                int i = 1;
-                ((Button) findViewById(R.id.btn_3)).setText(formatValue(i));
-                pauseMusic();
+//                int i = 1;
+//                ((Button) findViewById(R.id.btn_3)).setText(formatValue(i));
+//                pauseMusic();
+                startActivity(new Intent(this, TabTestActivity.class));
                 break;
             case R.id.btn_4:
                 startActivity(new Intent(this, RegularActivity.class));

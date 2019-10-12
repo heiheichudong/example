@@ -3,9 +3,10 @@ package com.gess.example.material;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.blankj.utilcode.util.LogUtils;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 public class TabTestActivity extends AppCompatActivity implements OnFragmentInteractionListener {
 
+    public final static String TAG = "TabTestActivity";
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private String[] title = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
@@ -27,14 +29,6 @@ public class TabTestActivity extends AppCompatActivity implements OnFragmentInte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_test);
         tabLayout = findViewById(R.id.design_tab);
-//        tabLayout.addTab(tabLayout.newTab().setText("第一项"));
-//        tabLayout.addTab(tabLayout.newTab().setText("第二项"));
-//        tabLayout.addTab(tabLayout.newTab().setText("第三项"));
-//        for (int i = 0; i < tabLayout.getTabCount(); i++) {
-//            if (tabLayout.getChildAt(i) instanceof TabItem){
-//                ((TabItem) tabLayout.getChildAt(i))
-//            }
-//        }
         viewPager = findViewById(R.id.vp_tab);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -54,19 +48,12 @@ public class TabTestActivity extends AppCompatActivity implements OnFragmentInte
             }
         });
 
-//        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
         final ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(AFragment.newInstance("A", "B"));
-        fragments.add(AFragment.newInstance("A", "B"));
-        fragments.add(AFragment.newInstance("A", "B"));
-        fragments.add(AFragment.newInstance("A", "B"));
-        fragments.add(AFragment.newInstance("A", "B"));
-        fragments.add(AFragment.newInstance("A", "B"));
-        fragments.add(AFragment.newInstance("A", "B"));
-//        fragments.add(AFragment.newInstance("A","B"));
-//        fragments.add(AFragment.newInstance("A","B"));
-//        fragments.add(AFragment.newInstance("A","B"));
-        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        for (int i = 0; i < title.length; i++) {
+            fragments.add(AFragment.newInstance("A", title[i]));
+        }
+        viewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
                 return fragments.get(position);
@@ -77,18 +64,16 @@ public class TabTestActivity extends AppCompatActivity implements OnFragmentInte
                 return fragments.size();
             }
 
-//            @Nullable
-//            @Override
-//            public CharSequence getPageTitle(int position) {
-//                return title[position];
-//            }
-
-
+            @Nullable
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return title[position];
+            }
         });
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-
+        LogUtils.d(TAG,"uri = " + uri);
     }
 }

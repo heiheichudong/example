@@ -1,19 +1,15 @@
 package com.gess.example.file;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
+import com.bumptech.glide.request.RequestOptions;
 import com.gess.example.R;
 
 public class FileActivity extends AppCompatActivity {
@@ -34,15 +30,17 @@ public class FileActivity extends AppCompatActivity {
             }
         });
 
-        Glide.with(this)
+        /*Glide.with(this)
                 .asBitmap()
-                .load("http://mimg.com.tv/img/2019/1/31/F4C58BE645E5203B931385FA55EC86B259C1203DDDC9055E21D82572DB952B3A")
+                .load("http://img1.imgtn.bdimg.com/it/u=2943189637,3941537920&fm=26&gp=0.jpg")
                 .into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
                         ((ImageView) findViewById(R.id.iv_file)).setImageBitmap(resource);
                     }
-                });
+                });*/
+        Glide.with(this).load("http://pic51.nipic.com/file/20141025/8649940_220505558734_2.jpg").apply(new RequestOptions().centerCrop()).into(((ImageView) findViewById(R.id.iv_file)));
+//        Glide.with(this).load(R.drawable.l0).into(((ImageView) findViewById(R.id.iv_file)));
 
     }
 }

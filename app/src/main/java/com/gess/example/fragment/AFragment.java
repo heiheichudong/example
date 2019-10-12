@@ -6,10 +6,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.gess.example.R;
+import com.gess.note.utils.GlideBlurTransformation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -67,7 +72,13 @@ public class AFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_a, container, false);
+        View view = inflater.inflate(R.layout.fragment_a, container, false);
+        Glide.with(this)
+                .load("http://img1.imgtn.bdimg.com/it/u=2943189637,3941537920&fm=26&gp=0.jpg")
+                .apply(RequestOptions.bitmapTransform(new GlideBlurTransformation(getActivity())))
+                .into(((ImageView) view.findViewById(R.id.iv_frag)));
+        ((TextView) view.findViewById(R.id.tv_frag)).setText(mParam2);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

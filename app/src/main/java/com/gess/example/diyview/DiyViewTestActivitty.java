@@ -30,6 +30,7 @@ public class DiyViewTestActivitty extends AppCompatActivity implements View.OnCl
 
         findViewById(R.id.btn_sva).setOnClickListener(this);
         findViewById(R.id.btn_ssva).setOnClickListener(this);
+        findViewById(R.id.btn_music_crop).setOnClickListener(this);
     }
 
     @Override
@@ -51,6 +52,9 @@ public class DiyViewTestActivitty extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.btn_ssva:
                 startActivity(new Intent(this, SimpleScaleViewActivity.class));
+                break;
+            case R.id.btn_music_crop:
+                startActivity(new Intent(this, ScaleViewTestActivity.class));
                 break;
         }
     }

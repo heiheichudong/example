@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.R;
 
 
@@ -56,5 +57,17 @@ public class PlaceholderFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        LogUtils.d(ARG_SECTION_NUMBER,"hidden = " + hidden);
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        LogUtils.d(ARG_SECTION_NUMBER,"isVisibleToUser = " + isVisibleToUser);
     }
 }
