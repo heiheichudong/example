@@ -1,20 +1,18 @@
 package com.gess.example.net;
 
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.R;
 import com.gess.example.net.upload.UploadModel;
+import com.gess.note.BaseActivity;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NetActivity extends AppCompatActivity {
+public class NetActivity extends BaseActivity {
 
 
     public static final String TAG = "NetActivity";
@@ -30,7 +28,7 @@ public class NetActivity extends AppCompatActivity {
                 Map<String, String> map = new HashMap<>();
                 map.put("token", "3CFF0C355D85E79BDF7990727E619422");
                 map.put("timeLength", "111111");
-                file = new File(Environment.getExternalStorageDirectory().getPath() + "/123.mp3");
+                file = new File("/storage/emulated/0/看天下/1.m4a");
 
                 LogUtils.d(TAG, "file--- 是否存在 = " + file.exists());
                 LogUtils.d(TAG, "file--- 是否是file = " + file.isFile());

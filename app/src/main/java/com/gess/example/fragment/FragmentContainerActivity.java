@@ -5,10 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class FragmentContainerActivity extends AppCompatActivity implements OnFragmentInteractionListener {
+public class FragmentContainerActivity extends BaseActivity implements OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

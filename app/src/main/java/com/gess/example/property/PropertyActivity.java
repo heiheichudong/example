@@ -6,11 +6,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
-public class PropertyActivity extends AppCompatActivity {
+public class PropertyActivity extends BaseActivity {
 
     private String tv = "作者：半佛仙人\n" +
             "链接：https://www.zhihu.com/question/345303992/answer/819142974\n" +

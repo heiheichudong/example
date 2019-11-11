@@ -1,11 +1,11 @@
 package com.gess.example.opengl.gl1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 
-public class GlOneActivity extends AppCompatActivity {
+import com.gess.note.BaseActivity;
+
+public class GlOneActivity extends BaseActivity {
 
 
     private GLSurfaceView glSurfaceView;

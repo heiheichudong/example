@@ -4,16 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.gess.example.R;
 import com.gess.example.opengl.gl1.GlOneActivity;
 import com.gess.example.opengl.gl2.GltwoActivity;
 import com.gess.example.opengl.gl3.GlthreeActivity;
 import com.gess.example.opengl.gl4.GlfourActivity;
 import com.gess.example.opengl.gl5.GlfiveActivity;
+import com.gess.note.BaseActivity;
 
-public class GlActivity extends AppCompatActivity {
+public class GlActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

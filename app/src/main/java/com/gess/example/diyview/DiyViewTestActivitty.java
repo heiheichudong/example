@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.gess.example.R;
 import com.gess.example.statusBar.StatusActivity;
+import com.gess.note.BaseActivity;
 
-public class DiyViewTestActivitty extends AppCompatActivity implements View.OnClickListener, RecordVideoView.changeRecordlistent {
+public class DiyViewTestActivitty extends BaseActivity implements View.OnClickListener, RecordVideoView.changeRecordlistent {
 
     private VideoRecordView recordView;
     private RecordVideoView videoView;
@@ -31,6 +30,8 @@ public class DiyViewTestActivitty extends AppCompatActivity implements View.OnCl
         findViewById(R.id.btn_sva).setOnClickListener(this);
         findViewById(R.id.btn_ssva).setOnClickListener(this);
         findViewById(R.id.btn_music_crop).setOnClickListener(this);
+        findViewById(R.id.cv_crv).setOnClickListener(this);
+        findViewById(R.id.vrv_diy).setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +56,13 @@ public class DiyViewTestActivitty extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.btn_music_crop:
                 startActivity(new Intent(this, ScaleViewTestActivity.class));
+                break;
+            case R.id.vrv_diy:
+//                startActivity(new Intent(this, CorpMusicActivity.class));
+                startActivity(new Intent(this, ScaleViewTestActivity.class));
+                break;
+            case R.id.cv_crv:
+                startActivity(new Intent(this, CircleRotateActivity.class));
                 break;
         }
     }

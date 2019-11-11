@@ -3,10 +3,9 @@ package com.gess.example.video;
 import android.os.Bundle;
 
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class DiyTextureActivity extends AppCompatActivity {
+public class DiyTextureActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

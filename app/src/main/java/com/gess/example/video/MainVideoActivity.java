@@ -7,15 +7,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.MainApp;
 import com.gess.example.R;
 import com.gess.example.widget.TextureVideoView;
+import com.gess.note.BaseActivity;
 import com.tencent.ijk.media.player.IMediaPlayer;
 
-public class MainVideoActivity extends AppCompatActivity {
+public class MainVideoActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

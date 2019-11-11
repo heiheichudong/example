@@ -16,7 +16,6 @@
 
 package com.gess.example.statusBar;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -24,9 +23,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
 
-public class ColorActivity extends Activity { 
+public class ColorActivity extends BaseActivity {
 
 	private SystemBarTintManager mTintManager;
 	private ColorPicker mColorPicker;

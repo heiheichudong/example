@@ -17,16 +17,16 @@
 package com.gess.example.statusBar;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
 
-public class MatchActionBarActivity extends Activity { 
+public class MatchActionBarActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

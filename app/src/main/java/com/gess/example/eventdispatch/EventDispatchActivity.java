@@ -1,11 +1,11 @@
 package com.gess.example.eventdispatch;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
-public class EventDispatchActivity extends AppCompatActivity {
+public class EventDispatchActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

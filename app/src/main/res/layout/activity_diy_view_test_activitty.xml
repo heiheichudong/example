@@ -15,6 +15,7 @@
         android:layout_height="wrap_content" />
 
     <com.gess.example.diyview.CircleView
+        android:id="@+id/cv_crv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

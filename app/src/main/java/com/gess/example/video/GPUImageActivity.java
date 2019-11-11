@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import jp.co.cyberagent.android.gpuimage.GPUImageView;
 import jp.co.cyberagent.android.gpuimage.filter.GPUImageLookupFilter;
 
-public class GPUImageActivity extends AppCompatActivity {
+public class GPUImageActivity extends BaseActivity {
 
     private String path = "/storage/emulated/0/cache/c668943a-57ac-4e21-9a06-65152a698065.jpg";
     private GPUImageView imageView;

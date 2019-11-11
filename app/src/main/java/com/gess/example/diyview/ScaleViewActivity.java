@@ -6,12 +6,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 import com.gess.note.widget.scaleview.VerticalScaleScrollView;
 
-public class ScaleViewActivity extends AppCompatActivity {
+public class ScaleViewActivity extends BaseActivity {
 
     private VerticalScaleScrollView scrollView;
     private RelativeLayout ll_texts;

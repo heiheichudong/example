@@ -5,12 +5,11 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
-public class GestureActivity extends AppCompatActivity {
+public class GestureActivity extends BaseActivity {
 
     public static String TAG = "GestureActivity";
     private GestureFrameLayout mFrameLayout;

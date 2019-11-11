@@ -3,9 +3,9 @@ package com.gess.example.opengl.gl3;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.gess.note.BaseActivity;
 
-public class GlthreeActivity extends AppCompatActivity {
+public class GlthreeActivity extends BaseActivity {
 
     private GLSurfaceView glSurfaceView;
 

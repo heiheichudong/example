@@ -6,10 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class DouyinActivity extends AppCompatActivity {
+public class DouyinActivity extends BaseActivity {
 
     private Intent action;
     @Override

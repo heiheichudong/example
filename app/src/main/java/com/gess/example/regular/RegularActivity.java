@@ -16,10 +16,9 @@ import android.widget.Toast;
 
 import com.gess.example.R;
 import com.gess.example.bean.UserInfoBean;
+import com.gess.note.BaseActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class RegularActivity extends AppCompatActivity {
+public class RegularActivity extends BaseActivity {
 
     private UserInfoBean infoBean;
     @Override

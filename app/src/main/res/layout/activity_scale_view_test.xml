@@ -4,9 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".diyview.ScaleViewTestActivity">
+    tools:context=".diyview.ScaleViewTestActivity"
+    android:background="@color/black"
+    android:orientation="vertical">
 
-    <com.gess.example.diyview.SimpleScaleView
+<!--    <com.gess.example.diyview.SimpleScaleView
+        android:id="@+id/ssv_test"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" />-->
+
+    <com.gess.example.diyview.ScaleScrollView
+        android:id="@+id/ssv_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_ssmax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btn_pop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
 </LinearLayout>

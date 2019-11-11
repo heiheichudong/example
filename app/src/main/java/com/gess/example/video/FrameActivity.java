@@ -12,12 +12,11 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
 import java.io.File;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class FrameActivity extends AppCompatActivity implements View.OnClickListener {
+public class FrameActivity extends BaseActivity implements View.OnClickListener {
 
     private VideoView videoView;
     private String path = "/storage/emulated/0/picwall/tmp/555.mp4";

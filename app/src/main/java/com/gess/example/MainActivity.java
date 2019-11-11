@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.gess.example.animator.AnimatorActivity;
 import com.gess.example.diyview.DiyViewTestActivitty;
 import com.gess.example.douyin.DouyinActivity;
@@ -24,12 +22,13 @@ import com.gess.example.regular.RegularActivity;
 import com.gess.example.statusBar.StatusActivity;
 import com.gess.example.video.FrameActivity;
 import com.gess.example.video.MainVideoActivity;
+import com.gess.note.BaseActivity;
 import com.tencent.rtmp.TXLiveBase;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     String data = " @昵称&用户名";
 

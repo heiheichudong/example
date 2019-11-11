@@ -5,15 +5,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 import com.yalantis.ucrop.view.GestureCropImageView;
 import com.yalantis.ucrop.view.OverlayView;
 import com.yalantis.ucrop.view.UCropView;
 
-public class PictureActivity extends AppCompatActivity {
+public class PictureActivity extends BaseActivity {
 
     private UCropView mUCropView;
     private GestureCropImageView mGestureCropImageView;

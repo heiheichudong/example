@@ -16,13 +16,6 @@
 
 package com.gess.example.statusBar;
 
-import static android.content.Intent.ACTION_MAIN;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -35,6 +28,15 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static android.content.Intent.ACTION_MAIN;
+
 public class SamplesListActivity extends ListActivity {
 
 	private final IntentAdapter mAdapter = new IntentAdapter();
@@ -42,6 +44,7 @@ public class SamplesListActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		LogUtils.d(this.getComponentName());
 		setListAdapter(mAdapter);
 		mAdapter.refresh();
 	}

@@ -2,11 +2,10 @@ package com.gess.example.viewpager2;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
-public class ViewPager2Activity extends AppCompatActivity {
+public class ViewPager2Activity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

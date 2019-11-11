@@ -3,9 +3,9 @@ package com.gess.example.opengl.gl4;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.gess.note.BaseActivity;
 
-public class GlfourActivity extends AppCompatActivity {
+public class GlfourActivity extends BaseActivity {
 
     private GLSurfaceView glSurfaceView;
 

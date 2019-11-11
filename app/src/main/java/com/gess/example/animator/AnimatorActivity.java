@@ -8,14 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.SizeUtils;
 import com.gess.example.R;
+import com.gess.note.BaseActivity;
 
 
-public class AnimatorActivity extends AppCompatActivity implements View.OnClickListener {
+public class AnimatorActivity extends BaseActivity implements View.OnClickListener {
 
     private final static String TAG = "AnimatorActivity";
     private ImageView iv_animator;

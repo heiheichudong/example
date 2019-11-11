@@ -28,7 +28,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".diyview.ScaleViewTestActivity"></activity>
+        <activity android:name=".diyview.CorpMusicActivity">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".diyview.CircleRotateActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".diyview.ScaleViewTestActivity" />
         <activity android:name=".viewpager2.ViewPager2Activity" />
 
         <service
