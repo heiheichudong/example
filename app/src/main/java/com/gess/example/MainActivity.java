@@ -2,10 +2,14 @@ package com.gess.example;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PixelFormat;
 import android.media.AudioManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 
 import com.gess.example.animator.AnimatorActivity;
 import com.gess.example.diyview.DiyViewTestActivitty;
@@ -23,21 +27,47 @@ import com.gess.example.statusBar.StatusActivity;
 import com.gess.example.video.FrameActivity;
 import com.gess.example.video.MainVideoActivity;
 import com.gess.note.BaseActivity;
-import com.tencent.rtmp.TXLiveBase;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 public class MainActivity extends BaseActivity {
 
-    String data = " @昵称&用户名";
+//    String data = " @昵称&用户名";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String sdkver = TXLiveBase.getSDKVersionStr();
-        Log.d("liteavsdk", "liteav sdk version is : " + sdkver);
+//        String sdkver = TXLiveBase.getSDKVersionStr();
+//        Log.d("liteavsdk", "liteav sdk version is : " + sdkver);
+//        setWindow();
+    }
+
+    private void setWindow(){
+        Button floatingButton = new Button(this);
+        floatingButton.setText("系统window");
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                0, 0,
+                PixelFormat.TRANSPARENT
+        );
+        // flag 设置 Window 属性
+        layoutParams.flags= WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+        // type 设置 Window 类别（层级）
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            layoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        } else {
+            layoutParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+        }
+//        layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY;
+//        layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT ;
+//        layoutParams.type = WindowManager.LayoutParams.TYPE_TOAST;
+//        layoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
+        layoutParams.gravity = Gravity.CENTER;
+        WindowManager windowManager = getWindowManager();
+        windowManager.addView(floatingButton, layoutParams);
     }
 
     public void btn(View view) {

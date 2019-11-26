@@ -1,5 +1,6 @@
 package com.gess.example.property;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -31,5 +32,12 @@ public class PropertyActivity extends BaseActivity {
         mTvTextview = findViewById(R.id.tv_textview);
         mTvTextview.setText(tv);
         mTvTextview.setMovementMethod(new ScrollingMovementMethod());
+
+        mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PropertyActivity.this,ViewPropertyActivity.class));
+            }
+        });
     }
 }

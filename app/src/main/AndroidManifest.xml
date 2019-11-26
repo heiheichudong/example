@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.gess.example">
 
     <uses-feature android:name="android.hardware.Camera" />
@@ -16,6 +17,8 @@
     <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
 
     <dist:module dist:instant="true" />
 
@@ -28,14 +31,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".property.ViewPropertyActivity"></activity>
         <activity android:name=".diyview.CorpMusicActivity">
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".diyview.CircleRotateActivity" >
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN"/>
+        <activity android:name=".diyview.CircleRotateActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".diyview.ScaleViewTestActivity" />

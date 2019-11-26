@@ -19,4 +19,11 @@
         android:layout_height="wrap_content"
         android:onClick="douyin"
         android:text="profile"/>
+
+    <Button
+        android:id="@+id/btn_by_qqmusic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="douyin"
+        android:text="qq音乐"/>
 </LinearLayout>
