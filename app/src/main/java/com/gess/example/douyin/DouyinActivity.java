@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.R;
 import com.gess.note.BaseActivity;
 import com.gess.note.utils.PlatformUtil;
@@ -43,5 +44,11 @@ public class DouyinActivity extends BaseActivity {
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        LogUtils.d("onDestroy");
+        super.onDestroy();
     }
 }

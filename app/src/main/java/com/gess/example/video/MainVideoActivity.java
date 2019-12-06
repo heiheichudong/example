@@ -22,7 +22,7 @@ public class MainVideoActivity extends BaseActivity {
         setContentView(R.layout.activity_main_video);
         setStatusBar();
 //        setTexture();
-//        setTextureTest();
+        setTextureTest();
     }
 
     private void setTextureTest() {

@@ -9,43 +9,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/btn_diytexture"
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:onClick="video"
             android:layout_height="wrap_content"
-            android:background="@color/tran"/>
+            android:layout_weight="1"
+            android:background="@color/tran"
+            android:onClick="video" />
 
         <Button
             android:id="@+id/btn_gpuimage"
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:onClick="video"
             android:layout_height="wrap_content"
-            android:background="@color/tran"/>
+            android:layout_weight="1"
+            android:background="@color/tran"
+            android:onClick="video" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/main_video_btn1"
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:onClick="video"
             android:layout_height="wrap_content"
-            android:background="@color/tran"/>
+            android:layout_weight="1"
+            android:background="@color/tran"
+            android:onClick="video" />
 
         <Button
             android:id="@+id/main_video_btn2"
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:onClick="video"
             android:layout_height="wrap_content"
-            android:background="@color/tran"/>
+            android:layout_weight="1"
+            android:background="@color/tran"
+            android:onClick="video" />
     </LinearLayout>
 
     <com.gess.example.widget.TextureVideoView
@@ -55,8 +57,8 @@
 
     <com.gess.example.video.DiyTextureView
         android:id="@+id/diy_tv"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
 
 </FrameLayout>
