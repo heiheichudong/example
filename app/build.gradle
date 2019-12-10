@@ -12,7 +12,8 @@ android {
         multiDexEnabled true
 
         ndk {
-            abiFilters "armeabi", "armeabi-v7a"
+//            abiFilters "armeabi", "armeabi-v7a"
+            abiFilters "x86"
             // 如果您使用的是商业版，只能使用 armeabi 架构，即：
             // abiFilters "armeabi",
         }
