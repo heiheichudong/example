@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+    viewBinding.enabled = true
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.gess.example"
@@ -12,11 +13,16 @@ android {
         multiDexEnabled true
 
         ndk {
-//            abiFilters "armeabi", "armeabi-v7a"
-            abiFilters "x86"
+            abiFilters "armeabi", "armeabi-v7a"
+//            abiFilters "x86"
             // 如果您使用的是商业版，只能使用 armeabi 架构，即：
             // abiFilters "armeabi",
         }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.gess.example",
+                JPUSH_APPKEY : "020af6077df48ac653f70b10", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
 
     }
 

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.gess.appkotlin.R
+import com.gess.appkotlin.everlasting
 import kotlinx.android.synthetic.main.item_home.view.*
 
 class HomeAdapter(var context:Context) : Adapter<HomeViewHolder>() {
@@ -24,7 +25,7 @@ class HomeAdapter(var context:Context) : Adapter<HomeViewHolder>() {
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         holder.view.ctv_item.path = mData[position]
-        holder.view.tv_item.text = "$position"
+        holder.view.tv_item.text = everlasting
 //        holder.view.ctv_item.customPlay()
     }
 }

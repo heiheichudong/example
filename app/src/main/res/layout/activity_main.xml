@@ -125,6 +125,20 @@
             android:onClick="btn"
             android:text="property" />
 
+        <Button
+            android:id="@+id/btn_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btn"
+            android:text="permission" />
+
+        <Button
+            android:id="@+id/btn_17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btn"
+            android:text="层叠模式" />
+
         <com.gess.example.diyview.CircleView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

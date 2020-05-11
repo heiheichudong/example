@@ -8,6 +8,7 @@ import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;
 
+import cn.jpush.android.api.JPushInterface;
 import okhttp3.OkHttpClient;
 
 
@@ -62,5 +63,12 @@ public class MainApp extends Application {
                 //其他配置
                 .build();
         OkHttpUtils.initClient(okHttpClient);
+
+        setJpush();
+    }
+
+    private void setJpush() {
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
     }
 }

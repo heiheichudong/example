@@ -1,7 +1,9 @@
 package com.gess.example.regular;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -14,9 +16,15 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.FileProvider;
+
+import com.gess.example.BuildConfig;
 import com.gess.example.R;
 import com.gess.example.bean.UserInfoBean;
+import com.gess.example.fragment.DialogWindowFragment;
 import com.gess.note.BaseActivity;
+
+import java.io.File;
 
 public class RegularActivity extends BaseActivity {
 
@@ -27,6 +35,24 @@ public class RegularActivity extends BaseActivity {
         setContentView(R.layout.activity_regular);
         infoBean = getData();
         textClick(infoBean.getAlias(), ((TextView) findViewById(R.id.tv_regular)));
+        findViewById(R.id.btn_regular).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogWindowFragment fragment = DialogWindowFragment.newInstance("","");
+                fragment.show(getSupportFragmentManager(),"");
+            }
+        });
+        findViewById(R.id.imageView2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                File saveFile = new File("/storage/emulated/0/picwall/tmp/4f574ac8-af0a-4371-8812-5398e87cfe47.apk");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                Uri contentUri = FileProvider.getUriForFile(RegularActivity.this, BuildConfig.APPLICATION_ID + ".file.PathProvider", saveFile);
+                intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
+                startActivity(intent);
+            }
+        });
     }
 
     public UserInfoBean getData(){

@@ -21,9 +21,11 @@ import com.gess.example.material.MaterialDesignActivity;
 import com.gess.example.material.TabTestActivity;
 import com.gess.example.net.NetActivity;
 import com.gess.example.opengl.GlActivity;
+import com.gess.example.permission.MainPermissionActivity;
 import com.gess.example.property.PropertyActivity;
 import com.gess.example.regular.RegularActivity;
 import com.gess.example.statusBar.StatusActivity;
+import com.gess.example.tint.TintActivity;
 import com.gess.example.video.FrameActivity;
 import com.gess.example.video.MainVideoActivity;
 import com.gess.note.BaseActivity;
@@ -44,7 +46,7 @@ public class MainActivity extends BaseActivity {
 //        setWindow();
     }
 
-    private void setWindow(){
+    private void setWindow() {
         Button floatingButton = new Button(this);
         floatingButton.setText("系统window");
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(
@@ -54,7 +56,7 @@ public class MainActivity extends BaseActivity {
                 PixelFormat.TRANSPARENT
         );
         // flag 设置 Window 属性
-        layoutParams.flags= WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+        layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
         // type 设置 Window 类别（层级）
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             layoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
@@ -119,6 +121,12 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.btn_15:
                 startActivity(new Intent(this, PropertyActivity.class));
+                break;
+            case R.id.btn_16:
+                startActivity(new Intent(this, MainPermissionActivity.class));
+                break;
+            case R.id.btn_17:
+                startActivity(new Intent(this, TintActivity.class));
                 break;
         }
     }

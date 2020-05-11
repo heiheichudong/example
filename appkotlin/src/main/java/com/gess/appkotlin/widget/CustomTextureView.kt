@@ -37,7 +37,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
             override fun onSurfaceTextureDestroyed(surface: SurfaceTexture?): Boolean {
                 Log.d(TAG, "onSurfaceTextureDestroyed")
                 mediaPlayer.reset()
-                return true
+                return false
             }
 
             override fun onSurfaceTextureAvailable(surface: SurfaceTexture?, width: Int, height: Int) {
@@ -58,6 +58,9 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         mediaPlayer.apply {
             reset()
             media_state = MEDIA_STATE_IDLE
+            if(mSurface == null){
+                mSurface = Surface(surfaceTexture)
+            }
             setSurface(mSurface)
 
             setOnCompletionListener {

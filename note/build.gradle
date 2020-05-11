@@ -47,4 +47,13 @@ dependencies {
 
     api 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
     api 'cn.bingoogolapple:bga-adapter:1.1.9@aar'
+
+    api 'cn.jiguang.sdk:jpush:3.5.0'
+    api 'cn.jiguang.sdk:jcore:2.2.4'
+
+    // For developers using AndroidX in their applications
+    api 'pub.devrel:easypermissions:3.0.0'
+
+    // For developers using the Android Support Library
+    api 'pub.devrel:easypermissions:2.0.1'
 }
