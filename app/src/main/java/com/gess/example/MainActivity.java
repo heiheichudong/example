@@ -24,6 +24,8 @@ import com.gess.example.opengl.GlActivity;
 import com.gess.example.permission.MainPermissionActivity;
 import com.gess.example.property.PropertyActivity;
 import com.gess.example.regular.RegularActivity;
+import com.gess.example.rxjava.RxActivity;
+import com.gess.example.rxjava.RxjavaActivity;
 import com.gess.example.statusBar.StatusActivity;
 import com.gess.example.tint.TintActivity;
 import com.gess.example.video.FrameActivity;
@@ -127,6 +129,10 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.btn_17:
                 startActivity(new Intent(this, TintActivity.class));
+                break;
+            case R.id.btn_18:
+//                startActivity(new Intent(this, RxjavaActivity.class));
+                startActivity(new Intent(this, RxActivity.class));
                 break;
         }
     }

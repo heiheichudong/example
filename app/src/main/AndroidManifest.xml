@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.gess.example">
+    package="com.gess.example" >
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_SMS" />
@@ -48,15 +48,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".tint.TintActivity"></activity>
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".rxjava.RxActivity"
+            android:exported="true" />
+        <activity
+            android:name=".rxjava.RxjavaActivity"
+            android:exported="true" />
+        <activity android:name=".tint.TintActivity" />
         <activity android:name=".property.ViewPropertyActivity" />
-        <activity android:name=".diyview.CorpMusicActivity">
+        <activity android:name=".diyview.CorpMusicActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".diyview.CircleRotateActivity">
+        <activity android:name=".diyview.CircleRotateActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -74,12 +80,12 @@
 
         <service android:name=".material.MyMessagingService" />
 
-        <receiver android:name=".material.MessageReadReceiver">
+        <receiver android:name=".material.MessageReadReceiver" >
             <intent-filter>
                 <action android:name="com.gess.example.material.ACTION_MESSAGE_READ" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".material.MessageReplyReceiver">
+        <receiver android:name=".material.MessageReplyReceiver" >
             <intent-filter>
                 <action android:name="com.gess.example.material.ACTION_MESSAGE_REPLY" />
             </intent-filter>
@@ -117,7 +123,7 @@
             android:name=".material.ItemDetailActivity"
             android:label="@string/title_item_detail"
             android:parentActivityName=".material.ItemListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gess.example.material.ItemListActivity" />
@@ -156,7 +162,7 @@
         <activity android:name=".video.MainVideoActivity" />
         <activity android:name=".eventdispatch.EventDispatchActivity" />
         <activity android:name=".statusBar.StatusActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -172,7 +178,7 @@
             android:name=".file.PathProvider"
             android:authorities="androidx.core.content.FileProvider"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
@@ -182,7 +188,7 @@
         <service
             android:name="cn.jpush.android.service.PushService"
             android:enabled="true"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.REGISTER" />
                 <action android:name="cn.jpush.android.intent.REPORT" />
@@ -201,7 +207,7 @@
         <service
             android:name="cn.jpush.android.service.DaemonService"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.DaemonService" />
 
@@ -215,8 +221,8 @@
             android:grantUriPermissions="true" /> <!-- Required SDK 核心功能 -->
         <receiver
             android:name="cn.jpush.android.service.PushReceiver"
-            android:enabled="true">
-            <intent-filter android:priority="1000">
+            android:enabled="true" >
+            <intent-filter android:priority="1000" >
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
 
                 <category android:name="com.gess.example" />
@@ -239,7 +245,7 @@
             android:configChanges="orientation|keyboardHidden"
             android:exported="false"
             android:theme="@android:style/Theme.NoTitleBar"
-            tools:node="replace">
+            tools:node="replace" >
             <intent-filter>
                 <action android:name="cn.jpush.android.ui.PushActivity" />
 
@@ -253,7 +259,7 @@
             android:configChanges="orientation|keyboardHidden"
             android:exported="false"
             android:theme="@style/MyDialogStyle"
-            tools:node="replace">
+            tools:node="replace" >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.gess.example" />
@@ -265,7 +271,7 @@
             android:name=".jpush.JpushService"
             android:enabled="true"
             android:exported="false"
-            android:process=":pushcore">
+            android:process=":pushcore" >
             <intent-filter>
                 <action android:name="cn.jiguang.user.service.action" />
             </intent-filter>
@@ -277,7 +283,7 @@
         <receiver
             android:name=".jpush.JpushReceiver"
             android:enabled="true"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
 
@@ -291,7 +297,7 @@
             android:name="cn.jpush.android.service.JNotifyActivity"
             android:exported="true"
             android:taskAffinity="jpush.custom"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.JNotifyActivity" />
 
