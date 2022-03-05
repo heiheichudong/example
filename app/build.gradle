@@ -13,6 +13,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
+        compileOptions {
+            targetCompatibility = 1.8
+            sourceCompatibility = 1.8
+        }
+
         ndk {
             abiFilters "armeabi", "armeabi-v7a"
 //            abiFilters "x86"
@@ -60,4 +65,7 @@ dependencies {
     implementation project(':note')
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'com.google.dagger:dagger:2.40.5'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.40.5'
 }

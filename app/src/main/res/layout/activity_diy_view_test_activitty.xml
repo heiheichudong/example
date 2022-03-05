@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:clipToPadding="false"
     android:orientation="vertical"
-    tools:context=".diyview.DiyViewTestActivitty">
+    tools:context=".diyview.DiyViewTestActivity">
 
     <com.gess.example.diyview.DiyViewTest
         android:id="@+id/dvt"

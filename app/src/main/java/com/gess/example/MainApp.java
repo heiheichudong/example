@@ -4,6 +4,8 @@ import android.app.Application;
 import android.util.DisplayMetrics;
 
 import com.blankj.utilcode.util.Utils;
+import com.gess.example.hilt.ApplicationComponent;
+import com.gess.example.hilt.DaggerApplicationComponent;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -30,10 +32,16 @@ public class MainApp extends Application {
     String ugcLicenceUrl = "http://license.vod2.myqcloud.com/license/v1/01abedac1b73522a375df36b081a5682/TXUgcSDK.licence"; //您从控制台申请的licence url
     String ugcKey = "2296f2e3ffd7746180c08c8cc97c4e83";//您从控制台申请的licence key
 
-    private MainApp instance;
+    private static MainApp instance;
 
-    public MainApp getInstance() {
+    public static MainApp getInstance() {
         return instance;
+    }
+
+    private ApplicationComponent dagger = DaggerApplicationComponent.create();
+
+    public ApplicationComponent getDagger() {
+        return dagger;
     }
 
     private void initScreenSize() {

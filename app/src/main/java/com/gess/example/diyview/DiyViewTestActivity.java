@@ -9,7 +9,7 @@ import com.gess.example.R;
 import com.gess.example.statusBar.StatusActivity;
 import com.gess.note.BaseActivity;
 
-public class DiyViewTestActivitty extends BaseActivity implements View.OnClickListener, RecordVideoView.changeRecordlistent {
+public class DiyViewTestActivity extends BaseActivity implements View.OnClickListener, RecordVideoView.changeRecordlistent {
 
     private VideoRecordView recordView;
     private RecordVideoView videoView;

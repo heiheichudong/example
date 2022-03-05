@@ -12,11 +12,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.gess.example.animator.AnimatorActivity;
-import com.gess.example.diyview.DiyViewTestActivitty;
+import com.gess.example.diyview.DiyViewTestActivity;
 import com.gess.example.douyin.DouyinActivity;
 import com.gess.example.file.FileActivity;
 import com.gess.example.fragment.FragmentContainerActivity;
 import com.gess.example.gesture.GestureActivity;
+import com.gess.example.hilt.DaggerActivity;
+import com.gess.example.jetpack.JetpackActivity;
 import com.gess.example.material.MaterialDesignActivity;
 import com.gess.example.material.TabTestActivity;
 import com.gess.example.net.NetActivity;
@@ -25,7 +27,6 @@ import com.gess.example.permission.MainPermissionActivity;
 import com.gess.example.property.PropertyActivity;
 import com.gess.example.regular.RegularActivity;
 import com.gess.example.rxjava.RxActivity;
-import com.gess.example.rxjava.RxjavaActivity;
 import com.gess.example.statusBar.StatusActivity;
 import com.gess.example.tint.TintActivity;
 import com.gess.example.video.FrameActivity;
@@ -92,7 +93,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, RegularActivity.class));
                 break;
             case R.id.btn_5:
-                startActivity(new Intent(this, DiyViewTestActivitty.class));
+                startActivity(new Intent(this, DiyViewTestActivity.class));
                 break;
             case R.id.btn_6:
                 startActivity(new Intent(this, DouyinActivity.class));
@@ -133,6 +134,12 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_18:
 //                startActivity(new Intent(this, RxjavaActivity.class));
                 startActivity(new Intent(this, RxActivity.class));
+                break;
+            case R.id.btn_19:
+                startActivity(new Intent(this, DaggerActivity.class));
+                break;
+            case R.id.btn_20:
+                startActivity(new Intent(this, JetpackActivity.class));
                 break;
         }
     }
