@@ -1,5 +1,9 @@
 package com.gess.example.permission;
 
+import static com.gess.example.permission.utils.TriceAppKt.PACKAGE_NAME_BAIDU;
+import static com.gess.example.permission.utils.TriceAppKt.PACKAGE_NAME_GAODE;
+import static com.gess.example.permission.utils.TriceAppKt.PACKAGE_NAME_TENGXUN;
+
 import android.Manifest;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.gess.example.R;
+import com.gess.example.permission.utils.TriceAppKt;
+import com.gess.example.permission.utils.TriceThreeApp;
 
 import java.util.List;
 
@@ -39,7 +45,9 @@ public class MainPermissionFragment extends Fragment implements EasyPermissions.
         v.findViewById(R.id.button_sms).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                smsTask();
+//                TriceThreeApp.triceBD(getActivity(),"东直门","西直门");
+                TriceAppKt.openMapToDaoHan(PACKAGE_NAME_TENGXUN,getActivity(),"","东直门");
+//                smsTask();
             }
         });
 

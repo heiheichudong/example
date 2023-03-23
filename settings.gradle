@@ -1,1 +1,2 @@
 include ':app', ':note', ':appkotlin'
+include ':aidlservice'

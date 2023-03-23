@@ -12,6 +12,16 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
+        int a = 10;
+        System.out.println("a1 = " + a);
+        int b = ++a;
+        System.out.println("a2 = " + a);
+        System.out.println("b = " + b);
         assertEquals(4, 2 + 2);
+    }
+
+    @Test
+    public void testHash(){
+        System.out.println("hello world".hashCode());
     }
 }

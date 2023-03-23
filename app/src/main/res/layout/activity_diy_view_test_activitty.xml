@@ -71,6 +71,7 @@
         app:riv_rightBottomRadius="30dp"-->
 
     <com.gess.example.widget.RoundImageView
+        android:id="@+id/riv"
         android:layout_width="67.5dp"
         android:layout_height="120dp"
         android:layout_marginTop="10dp"

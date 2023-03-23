@@ -1,16 +1,23 @@
 package com.gess.example;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.animator.AnimatorActivity;
 import com.gess.example.diyview.DiyViewTestActivity;
 import com.gess.example.douyin.DouyinActivity;
@@ -19,6 +26,7 @@ import com.gess.example.fragment.FragmentContainerActivity;
 import com.gess.example.gesture.GestureActivity;
 import com.gess.example.hilt.DaggerActivity;
 import com.gess.example.jetpack.JetpackActivity;
+import com.gess.example.list.ListActivity;
 import com.gess.example.material.MaterialDesignActivity;
 import com.gess.example.material.TabTestActivity;
 import com.gess.example.net.NetActivity;
@@ -31,10 +39,14 @@ import com.gess.example.statusBar.StatusActivity;
 import com.gess.example.tint.TintActivity;
 import com.gess.example.video.FrameActivity;
 import com.gess.example.video.MainVideoActivity;
+import com.gess.example.web.WebActivity;
+import com.gess.example.widget.AppBarActivity;
 import com.gess.note.BaseActivity;
+import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
 
@@ -42,11 +54,13 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        LogUtils.d("lifecycle = onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        String sdkver = TXLiveBase.getSDKVersionStr();
 //        Log.d("liteavsdk", "liteav sdk version is : " + sdkver);
 //        setWindow();
+//        getMemory();
     }
 
     private void setWindow() {
@@ -67,12 +81,19 @@ public class MainActivity extends BaseActivity {
             layoutParams.type = WindowManager.LayoutParams.TYPE_PHONE;
         }
 //        layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY;
-//        layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT ;
+//        layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
 //        layoutParams.type = WindowManager.LayoutParams.TYPE_TOAST;
 //        layoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
         layoutParams.gravity = Gravity.CENTER;
         WindowManager windowManager = getWindowManager();
         windowManager.addView(floatingButton, layoutParams);
+    }
+
+    private void getMemory(){
+        ActivityManager systemService = (ActivityManager) getBaseContext().getSystemService(Context.ACTIVITY_SERVICE);
+        LogUtils.d("mmmmmmmmmmmmmmmmmmmm = "+systemService.getMemoryClass());
+        LogUtils.d("mmmmmmmmmmmmmmmmmmmm = "+systemService.getLargeMemoryClass());
+        LogUtils.d("mmmmmmmmmmmmmmmmmmmm = "+Runtime.getRuntime().maxMemory() / (1024 * 1024));
     }
 
     public void btn(View view) {
@@ -141,6 +162,15 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_20:
                 startActivity(new Intent(this, JetpackActivity.class));
                 break;
+            case R.id.btn_21:
+                startActivity(new Intent(this, ListActivity.class));
+                break;
+            case R.id.btn_22:
+                startActivity(new Intent(this, WebActivity.class));
+                break;
+            case R.id.btn_23:
+                startActivity(new Intent(this, AppBarActivity.class));
+                break;
         }
     }
 
@@ -184,6 +214,71 @@ public class MainActivity extends BaseActivity {
         formattedNumber = formatter.format(value);
         formattedNumber = formattedNumber + suffix.charAt(power / 3);
         return formattedNumber.length() > 4 ? formattedNumber.replaceAll("\\.[0-9]+", "") : formattedNumber;
+    }
+
+
+    @Override
+    protected void onStart() {
+        LogUtils.d("lifecycle = onStart");
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        LogUtils.d("lifecycle = onResume");
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        LogUtils.d("lifecycle = onPause");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        LogUtils.d("lifecycle = onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        LogUtils.d("lifecycle = onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onRestart() {
+        LogUtils.d("lifecycle = onRestart");
+        super.onRestart();
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        LogUtils.d("lifecycle = onConfigurationChanged");
+        super.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        LogUtils.d("lifecycle = onSaveInstanceState");
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        LogUtils.d("lifecycle = onRestoreInstanceState");
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
     }
 
 }

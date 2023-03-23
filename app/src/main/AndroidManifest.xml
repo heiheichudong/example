@@ -50,6 +50,20 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".diyview.RecyclerViewProgressBarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".widget.AppBarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".web.WebActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".list.ListActivity"
+            android:exported="true" />
+        <activity
             android:name=".jetpack.JetpackActivity"
             android:exported="true" />
         <activity
