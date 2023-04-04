@@ -15,7 +15,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.animator.AnimatorActivity;
@@ -35,6 +34,7 @@ import com.gess.example.permission.MainPermissionActivity;
 import com.gess.example.property.PropertyActivity;
 import com.gess.example.regular.RegularActivity;
 import com.gess.example.rxjava.RxActivity;
+import com.gess.example.service.ServiceActivity;
 import com.gess.example.statusBar.StatusActivity;
 import com.gess.example.tint.TintActivity;
 import com.gess.example.video.FrameActivity;
@@ -42,11 +42,9 @@ import com.gess.example.video.MainVideoActivity;
 import com.gess.example.web.WebActivity;
 import com.gess.example.widget.AppBarActivity;
 import com.gess.note.BaseActivity;
-import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
 
@@ -170,6 +168,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.btn_23:
                 startActivity(new Intent(this, AppBarActivity.class));
+                break;
+            case R.id.btn_24:
+                startActivity(new Intent(this, ServiceActivity.class));
                 break;
         }
     }
