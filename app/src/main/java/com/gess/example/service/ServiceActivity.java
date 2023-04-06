@@ -10,7 +10,9 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.gess.example.R;
+import com.gess.example.ServiceAidlInterface;
 
 import java.util.List;
 
@@ -19,7 +21,9 @@ public class ServiceActivity extends AppCompatActivity {
     private Intent startIntent;
     private Intent bindIntent;
     private ServiceConnection connection;
-    private BindService.ServiceBinder binder;
+//    private BindService.ServiceBinder binder;
+//    private ServiceBinder binder;
+    private ServiceAidlInterface.Stub binder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,24 @@ public class ServiceActivity extends AppCompatActivity {
             connection = new ServiceConnection() {
                 @Override
                 public void onServiceConnected(ComponentName name, IBinder service) {
-                    binder = ((BindService.ServiceBinder) service);
+                    if (binder instanceof ServiceAidlInterface.Stub){
+                        binder = ((ServiceAidlInterface.Stub) service);
+                    }else {
+                        LogUtils.d("BindService","BindService " + name + service);
+
+                    }
+                    /*if (binder instanceof ServiceBinder){
+                        binder = ((ServiceBinder) service);
+                    }else {
+                        LogUtils.d("BindService","BindService " + name + service);
+
+                    }*/
+                    /*if (binder instanceof BindService.ServiceBinder){
+                        binder = ((BindService.ServiceBinder) service);
+                    }else {
+                        LogUtils.d("BindService","BindService " + name + service);
+
+                    }*/
                 }
 
                 @Override
@@ -51,10 +72,10 @@ public class ServiceActivity extends AppCompatActivity {
             bindService(bindIntent,connection, Service.BIND_AUTO_CREATE);
         });
         findViewById(R.id.btn_bind_start).setOnClickListener(v ->{
-            binder.callStart();
+//            binder.callStart();
         });
         findViewById(R.id.btn_bind_stop).setOnClickListener(v ->{
-            binder.callStop();
+//            binder.callStop();
         });
         findViewById(R.id.btn_unbind_service).setOnClickListener(v ->{
             if (connection != null){

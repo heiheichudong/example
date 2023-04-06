@@ -4,8 +4,10 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.RemoteException;
 
 import com.blankj.utilcode.util.LogUtils;
+import com.gess.example.ServiceAidlInterface;
 
 public class BindService extends Service {
     private static String TAG = "BindService";
@@ -16,10 +18,21 @@ public class BindService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        return new ServiceBinder();
+//        return new ServiceBinder();
+        return new ServiceAidlInterface.Stub() {
+            @Override
+            public void callStart() throws RemoteException {
+
+            }
+
+            @Override
+            public void callStop() throws RemoteException {
+
+            }
+        };
     }
 
-    class ServiceBinder extends Binder {
+    /*class ServiceBinder extends Binder {
         void callStart() {
             LogUtils.d(TAG, "BindService callStart---------");
             start();
@@ -37,7 +50,7 @@ public class BindService extends Service {
 
     void stop() {
         LogUtils.d(TAG, "BindService stop---------");
-    }
+    }*/
 
     @Override
     public boolean onUnbind(Intent intent) {

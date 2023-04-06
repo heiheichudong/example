@@ -52,10 +52,12 @@
         <service
             android:name=".service.MyIntentService"
             android:exported="false"></service>
+<!--        android:process=":secret"-->
         <service
             android:name=".service.BindService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:process=":secret"/>
 
         <activity
             android:name=".service.ServiceActivity"
@@ -64,7 +66,8 @@
         <service
             android:name=".service.StartService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:process="com.gess.second"/>
 
         <activity
             android:name=".diyview.RecyclerViewProgressBarActivity"
