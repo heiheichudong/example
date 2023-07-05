@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,WebActivity::class.java)
             startActivity(intent)
         }
+
         rv_main.postDelayed(Runnable {
             rv_main.layoutManager = LinearLayoutManager(this)
             rv_main.adapter = HomeAdapter(this)

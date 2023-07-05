@@ -49,15 +49,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".jetpack.databinding.DataBindingActivity"
+            android:exported="true" />
+
         <service
             android:name=".service.MyIntentService"
-            android:exported="false"></service>
-<!--        android:process=":secret"-->
+            android:exported="false" /> <!-- android:process=":secret" -->
         <service
             android:name=".service.BindService"
             android:enabled="true"
             android:exported="true"
-            android:process=":secret"/>
+            android:process=":secret" />
 
         <activity
             android:name=".service.ServiceActivity"
@@ -67,7 +70,7 @@
             android:name=".service.StartService"
             android:enabled="true"
             android:exported="true"
-            android:process="com.gess.second"/>
+            android:process="com.gess.second" />
 
         <activity
             android:name=".diyview.RecyclerViewProgressBarActivity"

@@ -48,7 +48,6 @@ public class ServiceActivity extends AppCompatActivity {
                         binder = ((ServiceAidlInterface.Stub) service);
                     }else {
                         LogUtils.d("BindService","BindService " + name + service);
-
                     }
                     /*if (binder instanceof ServiceBinder){
                         binder = ((ServiceBinder) service);
