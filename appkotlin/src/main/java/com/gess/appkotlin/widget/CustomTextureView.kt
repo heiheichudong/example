@@ -25,7 +25,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
 
     private fun init() {
-        surfaceTextureListener = object : SurfaceTextureListener {
+        /*surfaceTextureListener = object : SurfaceTextureListener {
             override fun onSurfaceTextureSizeChanged(surface: SurfaceTexture?, width: Int, height: Int) {
 //                Log.d(TAG, "onSurfaceTextureSizeChanged")
             }
@@ -48,11 +48,11 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 //                    customPlay()
                 }
             }
-        }
+        }*/
     }
 
 
-    fun customPlay() {
+    /*fun customPlay() {
         if (path.isNullOrEmpty()) return
         Log.d(TAG, "customPlay = ${this@CustomTextureView}")
         mediaPlayer.apply {
@@ -78,7 +78,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
             prepareAsync()
 
         }
-    }
+    }*/
 
 
 }

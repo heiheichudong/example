@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".example.ExampleActivity">
 
+    <TableLayout
+        android:id="@+id/tv_example"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_tabLayout"
+                android:text="TabLayout"></Button>
+
+            <Button android:text="Dialog"></Button>
+
+            <Button android:id="@+id/btn_sign"
+                android:text="sign"></Button>
+        </TableRow>
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+/**
+     * 获取第一天为星期几
+     */
+    private fun getMonthOneDayWeek(): Int {
+        val a: Calendar = Calendar.getInstance()
+        a.set(Calendar.YEAR, year)
+        a.set(Calendar.MONTH, month)
+        a.set(Calendar.DATE, 1) //把日期设置为当月第一天
+        return a.get(Calendar.DAY_OF_WEEK)
+    }
+
+    /**
+     * 获取当月有几天
+     */
+    private fun getMonthMaxDay(): Int {
+        val a: Calendar = Calendar.getInstance()
+        a.set(Calendar.YEAR, year)
+        a.set(Calendar.MONTH, month)
+        return a.getActualMaximum(Calendar.DAY_OF_MONTH)
+    }
+
+    val data = ArrayList<DateBean>()
+            //获取第一天是星期几然后计算出需要填充的空白数据，这里使用0作为空白数据，展示的时候判断并显示空
+            repeat(getMonthOneDayWeek() - 1){
+                //填充空白的
+                data.add(DateBean(0,0,0))
+            }
+            //填充日期数据
+            repeat(getMonthMaxDay()){
+                data.add(DateBean(year,month,it + 1))
+            }
