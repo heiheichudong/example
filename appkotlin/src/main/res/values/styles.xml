@@ -9,4 +9,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="week">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">12dp</item>
+    </style>
 </resources>
