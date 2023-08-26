@@ -28,7 +28,7 @@ proguard/
 *.ipr
 *.iws
 .idea/
-
+./app/.cxx
 
 .gradle
 /local.properties
