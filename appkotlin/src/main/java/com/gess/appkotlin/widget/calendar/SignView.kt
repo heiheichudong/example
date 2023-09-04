@@ -8,6 +8,7 @@ import android.widget.FrameLayout
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.gess.appkotlin.R
+import kotlinx.android.synthetic.main.view_sign.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.math.abs
@@ -18,15 +19,23 @@ class SignView : FrameLayout {
     private val fragments: ArrayList<SignFragment> = ArrayList()
     private var fragmentAdapter: SignFragAdapter? = null
     private var currentPos = 0
+    private lateinit var listener: SignFragment.ClickDayListener
+
+    fun setListener(listener: SignFragment.ClickDayListener) {
+        this.listener = listener
+        if (listener != null){
+            fragments[fragments.size - 6].setListener(listener)
+        }
+    }
 
     constructor(context: Context) : this(context, null)
 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context,
-        attrs,
-        defStyleAttr
+            context,
+            attrs,
+            defStyleAttr
     ) {
         View.inflate(context, R.layout.view_sign, this)
         initView()
@@ -43,6 +52,7 @@ class SignView : FrameLayout {
         val currentMonth = Calendar.getInstance().get(Calendar.MONTH)
         val currentYear = Calendar.getInstance().get(Calendar.YEAR)
         val currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+        tv_month.text = "${currentYear}年${currentMonth + 1}月"
         var offsetItem = (currentYear - 2023) * 12 + 6
         for (i in currentMonth - offsetItem until currentMonth) {
             var month = i
@@ -74,19 +84,23 @@ class SignView : FrameLayout {
         }
     }
 
-    private fun initListener(){
+    private fun initListener() {
         mViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 currentPos = position
+                if (this@SignView::listener.isInitialized && this@SignView.listener != null) {
+                    fragments[currentPos].setListener(this@SignView.listener)
+                }
                 fragments[currentPos].arguments?.let {
                     val currentPageYear = it.getInt(SignFragment.YEAR) //当前页的年
                     val currentPageMonth = it.getInt(SignFragment.MONTH) //当前页的月
                     //展示的月需要加1（因为系统中的月是从0开始的）
 //                    onPageChangedCallBack?.onPageChanged(currentPageYear,currentPageMonth + 1)
+                    tv_month.text = "${currentPageYear}年${currentPageMonth}月"
                 }
                 //刷新下当前的数据
                 fragments[currentPos].refreshData()
-                if(currentPos + 3 > fragments.size){
+                if (currentPos + 3 > fragments.size) {
                     addNextFragment()
                 }
             }

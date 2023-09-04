@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".example.calendar.SignActivity"></activity>
+        <activity android:name=".example.http.HttpActivity"></activity>
+        <activity android:name=".example.calendar.SignActivity" />
         <activity android:name=".example.dialog.DialogActivity" />
         <activity android:name=".example.tab.TabLayoutActivity" />
         <activity android:name=".ui.WebActivity" /> <!-- <activity android:name=".example.ExampleActivity" /> -->
